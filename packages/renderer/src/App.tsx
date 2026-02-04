@@ -9,6 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ipcLink } from 'electron-trpc-experimental/renderer';
 import { trpc } from './trpc-react';
 import { LoginPage } from './pages/LoginPage.tsx';
+import { GlobalStyles } from '@greenroom-robotics/alpha.ui/build/theme/theme.js';
 
 export const App = () => {
   const [queryClient] = useState(() => new QueryClient());
@@ -35,9 +36,10 @@ export const App = () => {
   }
 
   return (
+    <GlobalStyles defaultThemeMode="system" appId="launchpad">
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <TexturedPanel fill direction="row">
+        <TexturedPanel fill direction="row" $backgroundColor='background-front' $dotColor="border">
           <Sidebar />
           <Routes>
             <Route path="/" element={<ApplicationsPage />} />
@@ -47,6 +49,7 @@ export const App = () => {
         </TexturedPanel>
       </QueryClientProvider>
     </trpc.Provider>
+    </GlobalStyles>
   );
 };
 
