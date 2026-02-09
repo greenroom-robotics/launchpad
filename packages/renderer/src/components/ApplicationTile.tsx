@@ -95,8 +95,8 @@ export const ApplicationTile = ({
       pad="small"
       border={{ color: getStatusColor(), size: 'xsmall' }}
       title={application.url}
-      >
-      <Box direction="row"justify="between" align="center" margin={{ bottom: 'xsmall' }}>
+    >
+      <Box direction="row" justify="between" align="center" margin={{ bottom: 'xsmall' }}>
         <Heading level={4} margin="none">
           {application.name}
         </Heading>
@@ -104,7 +104,7 @@ export const ApplicationTile = ({
           {getStatusText()}
         </Text>
       </Box>
-      <HeroComponent connected={connected} color={{ connected: "green", disconnected: "red" }} />
+      <HeroComponent connected={connected} color={{ connected: 'green', disconnected: 'red' }} />
       <Loading overlay show={isClickLoading} background="rgba(0,0,0,0.5)" />
     </Box>
   );

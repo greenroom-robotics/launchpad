@@ -205,11 +205,7 @@ export const AppSettingsPage = () => {
         </Box>
       )}
       {savedConfig && !isSaving && !submitError && (
-        <Box
-          pad="small"
-          background="green"
-          margin={{ bottom: 'small' }}
-        >
+        <Box pad="small" background="green" margin={{ bottom: 'small' }}>
           <Text>Configuration saved successfully!</Text>
         </Box>
       )}

@@ -37,18 +37,23 @@ export const App = () => {
 
   return (
     <GlobalStyles defaultThemeMode="system" appId="launchpad">
-    <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>
-        <TexturedPanel fill direction="row" $backgroundColor='background-front' $dotColor="border">
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<ApplicationsPage />} />
-            <Route path="/installer" element={<InstallerPage />} />
-            <Route path="/settings/*" element={<SettingsPage />} />
-          </Routes>
-        </TexturedPanel>
-      </QueryClientProvider>
-    </trpc.Provider>
+      <trpc.Provider client={trpcClient} queryClient={queryClient}>
+        <QueryClientProvider client={queryClient}>
+          <TexturedPanel
+            fill
+            direction="row"
+            $backgroundColor="background-front"
+            $dotColor="border"
+          >
+            <Sidebar />
+            <Routes>
+              <Route path="/" element={<ApplicationsPage />} />
+              <Route path="/installer" element={<InstallerPage />} />
+              <Route path="/settings/*" element={<SettingsPage />} />
+            </Routes>
+          </TexturedPanel>
+        </QueryClientProvider>
+      </trpc.Provider>
     </GlobalStyles>
   );
 };

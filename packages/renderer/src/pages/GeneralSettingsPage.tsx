@@ -94,9 +94,7 @@ export const GeneralSettingsPage = () => {
           Set the visual theme for launchpad
         </Text>
 
-        <ThemeToggleControl/>
-
-      
+        <ThemeToggleControl />
       </CollapsiblePanel>
     </Box>
   );

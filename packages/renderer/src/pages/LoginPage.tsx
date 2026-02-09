@@ -90,7 +90,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
   // No loading states needed - data comes from query parameters
 
   return (
-    <TexturedPanel fill direction="row" $backgroundColor='background-front' $dotColor="border">
+    <TexturedPanel fill direction="row" $backgroundColor="background-front" $dotColor="border">
       <Box
         flex
         style={{
@@ -111,9 +111,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
         </Box>
         {error && (
           <Box flex={false} pad="small" background="status-error">
-            <Text size="small">
-              {error}
-            </Text>
+            <Text size="small">{error}</Text>
           </Box>
         )}
         <Box flex={false} margin={{ top: 'small' }} border pad="small">
