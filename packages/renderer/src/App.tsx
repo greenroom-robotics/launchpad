@@ -1,4 +1,4 @@
-import { TexturedPanel } from './components/TexturedPanel';
+import { TexturedPanel } from '@greenroom-robotics/alpha.ui/build/components/TexturedPanel.js';
 import { Sidebar } from './components/layout/Sidebar';
 import { Routes, Route } from 'react-router';
 import { ApplicationsPage } from './pages/ApplicationsPage.tsx';
