@@ -27,11 +27,13 @@ export const App = () => {
 
   if (isLoginWindow && url) {
     return (
-      <trpc.Provider client={trpcClient} queryClient={queryClient}>
-        <QueryClientProvider client={queryClient}>
-          <LoginPage url={url} realm={realm || undefined} />
-        </QueryClientProvider>
-      </trpc.Provider>
+      <GlobalStyles defaultThemeMode="system" appId="launchpad">
+        <trpc.Provider client={trpcClient} queryClient={queryClient}>
+          <QueryClientProvider client={queryClient}>
+            <LoginPage url={url} realm={realm || undefined} />
+          </QueryClientProvider>
+        </trpc.Provider>
+      </GlobalStyles>
     );
   }
 
