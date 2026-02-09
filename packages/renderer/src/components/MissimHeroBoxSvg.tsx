@@ -238,12 +238,10 @@ export const MissimHeroBoxSvg = ({ connected, color }: MissimHeroBoxSvgProps) =>
           <polygon className="cls-79" points="1570.2 495.55 1570.2 472.9 1536.36 472.9 1535.17 495.55 1570.2 495.55"/>
           <polygon className="cls-79" points="1533.97 509.03 1533.43 525.09 1570.2 526.63 1570.03 509.03 1533.97 509.03"/>
           <polygon className="cls-79" points="1533.43 591.49 1536.36 525.21 1570.2 526.63 1570.2 591.49 1533.43 591.49"/>
-          {/* make the below path darker */}
           <path className="cls-70" d="M1570.2,670.6v-79.11h-81.3s-12.4,22.56-7.66,41.54c4.74,18.98,27.28,18.21,30.84,27.49,3.56,9.28-1.07,9.71,7.77,10.09,8.84.38,50.35,0,50.35,0Z"/>
           <polygon className="cls-69" points="1570.2 685.33 1570.2 670.6 1381.6 670.6 1381.6 680.47 1385.16 680.47 1385.16 685.22 1570.2 685.33"/>
           <polygon className="cls-60" points="1528.68 685.33 1528.68 695.89 1533.43 695.89 1527.5 839.41 1570.2 839.41 1570.2 685.33 1528.68 685.33"/>
           <path className="cls-55" d="M1570.2,839.41l-359.39,8.3s1.19,9.08,0,15.21c-1.19,6.14-4.74,9.69,2.37,13.25,7.12,3.56,84.21,5.93,109.12,7.12,24.91,1.19,247.9,0,247.9,0v-43.89Z"/>
-          {/* make rect darker */}
           <rect className="cls-74" x="1406.98" y="257.56" width="15.84" height="413.04"/>
           <polygon className="cls-51" points="1293.18 842.97 1285.51 861.95 1285.51 867.02 1505.55 867.02 1505.55 861.62 1497.59 839.41 1293.18 842.97"/>
           <rect className="cls-80" x="1228.6" y="793.15" width="40.33" height="40.33" rx="1.05" ry="1.05"/>
@@ -273,7 +271,6 @@ export const MissimHeroBoxSvg = ({ connected, color }: MissimHeroBoxSvgProps) =>
           <rect className="cls-56" x="1336.53" y="876.18" width="41.51" height="7.12"/>
           <rect className="cls-56" x="1315.18" y="823.99" width="84.21" height="37.96" rx=".99" ry=".99"/>
           <rect className="cls-57" x="1341.28" y="829.92" width="33.21" height="27.28"/>
-          {/* make these two circles lighter */}
           <circle className="cls-61" cx="1332.97" cy="842.97" r="15.42"/>
           <circle className="cls-61" cx="1381.61" cy="842.97" r="15.42"/>
           <rect className="cls-56" x="1346.02" y="857.2" width="22.54" height="18.98"/>
