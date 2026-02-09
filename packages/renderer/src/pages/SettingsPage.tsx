@@ -24,19 +24,19 @@ export const SettingsPage = memo(() => {
           <Link to="/settings/apps">
             <Button
               label="Apps"
-              color={location?.pathname === '/settings/apps' ? 'green' : 'white'}
+              primary={location?.pathname === '/settings/apps'}
             />
           </Link>
           <Link to="/settings/auth">
             <Button
               label="Authentication"
-              color={location?.pathname === '/settings/auth' ? 'green' : 'white'}
+              primary={location?.pathname === '/settings/auth'}
             />
           </Link>
           <Link to="/settings/general">
             <Button
               label="General"
-              color={location?.pathname === '/settings/general' ? 'green' : 'white'}
+              primary={location?.pathname === '/settings/general'}
             />
           </Link>
         </Nav>

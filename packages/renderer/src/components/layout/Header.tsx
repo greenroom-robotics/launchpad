@@ -30,7 +30,7 @@ export const Header = React.forwardRef(({ title, children, border }: IHeaderProp
       flex={false}
       border={border}
     >
-      <Text weight="bold" color="white">
+      <Text weight="bold">
         {title}
       </Text>
       <Box flex />

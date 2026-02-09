@@ -196,12 +196,12 @@ export const AppSettingsPage = () => {
       {/* Show save status */}
       {isSaving && (
         <Box pad="small" background="status-unknown" margin={{ bottom: 'small' }}>
-          <Text color="white">Saving configuration...</Text>
+          <Text>Saving configuration...</Text>
         </Box>
       )}
       {submitError && (
         <Box pad="small" background="status-error" margin={{ bottom: 'small' }}>
-          <Text color="white">Error saving: {submitError.message}</Text>
+          <Text>Error saving: {submitError.message}</Text>
         </Box>
       )}
       {savedConfig && !isSaving && !submitError && (
@@ -209,9 +209,8 @@ export const AppSettingsPage = () => {
           pad="small"
           background="green"
           margin={{ bottom: 'small' }}
-          border={{ color: 'white' }}
         >
-          <Text color="white">Configuration saved successfully!</Text>
+          <Text>Configuration saved successfully!</Text>
         </Box>
       )}
 
