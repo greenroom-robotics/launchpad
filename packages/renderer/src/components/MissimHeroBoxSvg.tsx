@@ -177,7 +177,7 @@ export const MissimHeroBoxSvg = ({ connected, color }: MissimHeroBoxSvgProps) =>
     </defs>
     <rect x="0" y="0" width="3074" height="1958" fill="grey" opacity={'15%'} />
     <g>
-      <rect className="cls-49" x="4.09" y="4.33" width="3065.91" height="1949.96" />
+      <rect className="cls-49" x="4.09" y="4.33" width="3061.91" height="1945.96" />
       <g className="cls-78">
         <g>
           <g>

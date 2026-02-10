@@ -94,7 +94,7 @@ export const LookoutHeroBoxSvg = ({ connected, color }: LookoutHeroBoxSvgProps) 
     </defs>
     <rect x="0" y="0" width="3074" height="1958" fill="grey" opacity={'15%'} />
     <g>
-      <rect className="cls-06" x="4.03" y="4.33" width="3065.91" height="1949.96" />
+      <rect className="cls-06" x="4.03" y="4.33" width="3060.91" height="1946.96" />
       <g className="cls-16">
         <g>
           <path
