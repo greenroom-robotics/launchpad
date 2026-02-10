@@ -88,7 +88,7 @@ export const ApplicationTile = ({
       onClick={isClickable ? handleClick : undefined}
       style={{
         cursor: isClickable && !isClickLoading ? 'pointer' : 'default',
-        opacity: connected ? 1 : 0.8,
+        opacity: connected ? 1 : 0.7,
         position: 'relative',
       }}
       hoverIndicator={isClickable && !isClickLoading ? true : false}

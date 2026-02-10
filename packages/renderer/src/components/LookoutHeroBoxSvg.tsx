@@ -37,6 +37,7 @@ export const LookoutHeroBoxSvg = ({ connected, color }: LookoutHeroBoxSvgProps) 
 
       .cls-09 {
         fill:  ${connected ? color.connected : color.disconnected};
+        opacity: 0.5;
       }
 
       .cls-03 {
@@ -205,6 +206,5 @@ export const LookoutHeroBoxSvg = ({ connected, color }: LookoutHeroBoxSvgProps) 
         </g>
       </g>
     </g>
-    <rect className="cls-02" x="4" y="4.33" width="3065.91" height="1949.96" />
   </svg>
 );

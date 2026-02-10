@@ -538,6 +538,5 @@ export const MissimHeroBoxSvg = ({ connected, color }: MissimHeroBoxSvgProps) =>
         </g>
       </g>
     </g>
-    <rect className="cls-47" x="4" y="4.33" width="3065.91" height="1949.96" />
   </svg>
 );

@@ -58,7 +58,7 @@ export const MaropsHeroBoxSvg = ({ connected, color }: MaropsHeroBoxSvgProps) =>
 
       .cls-92 {
         fill: ${connected ? color.connected : color.disconnected};;
-        opacity: .17;
+        opacity: .1;
       }
 
       .cls-88 {
@@ -826,6 +826,5 @@ export const MaropsHeroBoxSvg = ({ connected, color }: MaropsHeroBoxSvgProps) =>
         <polyline className="cls-85" points="-1340.22 986.44 -953.48 845.91 32.09 1037.42" />
       </g>
     </g>
-    <rect className="cls-83" x="4" y="4.33" width="3065.91" height="1949.96" />
   </svg>
 );

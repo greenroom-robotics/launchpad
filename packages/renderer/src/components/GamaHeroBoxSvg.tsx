@@ -124,6 +124,7 @@ export const GamaHeroBoxSvg = ({ connected, color }: GamaHeroBoxSvgProps) => (
 
       .cls-43 {
         fill: ${connected ? color.connected : color.disconnected};
+        opacity: 0.7;
       }
 
       .cls-35 {
@@ -335,7 +336,7 @@ export const GamaHeroBoxSvg = ({ connected, color }: GamaHeroBoxSvgProps) => (
           />
           <g>
             <g transform="translate(2247.24 1349.16)">
-              <circle className="cls-43" r={50} />
+              <circle className="cls-43" r={35} />
             </g>
 
             <ellipse className="cls-34" cx="2247.24" cy="1349.16" rx="117.73" ry="117.55" />
