@@ -70,12 +70,19 @@ export class AuthService {
       }
     }
 
-    // Test if auth is actually required by making a request
+    // Test if auth is actually required by making a request without credentials
     try {
-      const testResult = await this.httpClient.testBasicAuth(url, '', '');
-      if (testResult.success || testResult.status !== 401) {
+      const authCheck = await this.httpClient.checkAuthRequired(url);
+      console.log(
+        `[AuthService] Auth check for ${host}: authRequired=${authCheck.authRequired}, status=${authCheck.status}`
+      );
+      if (!authCheck.authRequired) {
         console.log(`[AuthService] No authentication required for ${host}`);
         return null; // No auth required
+      }
+      // Use realm from server response if available
+      if (authCheck.realm && !realm) {
+        realm = authCheck.realm;
       }
     } catch (error) {
       console.log(

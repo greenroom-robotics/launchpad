@@ -31,6 +31,47 @@ export class SecureHttpClient {
   }
 
   /**
+   * Check if a URL requires authentication by sending a request without credentials.
+   * Does not follow redirects, since a redirect may indicate an auth gateway.
+   * @param url - The URL to check
+   * @returns Object indicating if auth is required and the HTTP status code
+   */
+  async checkAuthRequired(
+    url: string
+  ): Promise<{ authRequired: boolean; status: number; realm?: string }> {
+    try {
+      const response = await this.instance.get(url, {
+        timeout: 5000,
+        maxRedirects: 0, // Don't follow redirects — a redirect may indicate an auth gate
+      });
+
+      const status = response.status;
+      const authRequired = status === 401 || status === 407;
+      const wwwAuth = response.headers?.['www-authenticate'] || '';
+      const realmMatch = wwwAuth.match(/realm="?([^"]*)"?/i);
+
+      return { authRequired, status, realm: realmMatch?.[1] };
+    } catch (error: unknown) {
+      // Axios throws on redirects when maxRedirects is 0
+      if (isAxiosError(error) && error.response) {
+        const status = error.response.status;
+        if (status === 401 || status === 407) {
+          return { authRequired: true, status };
+        }
+        // 3xx redirects may indicate an auth gateway
+        if (status >= 300 && status < 400) {
+          return { authRequired: true, status };
+        }
+        return { authRequired: false, status };
+      }
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      console.error(`[SecureHttpClient] Auth check failed for ${url}:`, errorMessage);
+      // Network error — can't determine, assume no auth so the window can attempt to load
+      return { authRequired: false, status: 0 };
+    }
+  }
+
+  /**
    * Test Basic Authentication credentials against a server
    * @param url - The URL to test against
    * @param username - Username for Basic Auth
