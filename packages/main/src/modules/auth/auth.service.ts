@@ -77,7 +77,7 @@ export class AuthService {
         console.log(`[AuthService] No authentication required for ${host}`);
         return null; // No auth required
       }
-    } catch (error) {
+    } catch {
       console.log(
         `[AuthService] Could not test auth requirements for ${host}, assuming auth is required`
       );

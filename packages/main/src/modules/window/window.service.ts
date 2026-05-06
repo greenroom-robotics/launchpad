@@ -3,7 +3,7 @@ import { TYPES } from '../../types.js';
 import { BrowserWindow } from 'electron';
 import type { AppInitConfig } from '../../AppInitConfig.js';
 import { AuthService, UserCancelledAuthError } from '../auth/auth.service.js';
-import type { WindowMetadata } from '@app/shared';
+import type { AuthCredentials, WindowMetadata } from '@app/shared';
 import { formatAppUrl } from '../..//utils.js';
 
 const WINDOW_TYPES = {
@@ -131,7 +131,7 @@ export class WindowService {
     console.log(`[WindowService] Creating application window for ${applicationName} at ${url}`);
 
     // Check if authentication is required and get credentials
-    let credentials: any = null;
+    let credentials: AuthCredentials | null = null;
     try {
       credentials = await this.authService.checkAuthAndGetCredentials(url);
       console.log(
@@ -277,7 +277,7 @@ export class WindowService {
     console.log(`[WindowService] Creating new application window for ${applicationName} at ${url}`);
 
     // Check if authentication is required and get credentials
-    let credentials: any = null;
+    let credentials: AuthCredentials | null = null;
     try {
       credentials = await this.authService.checkAuthAndGetCredentials(url);
       console.log(
