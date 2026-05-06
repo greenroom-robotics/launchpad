@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath } from 'node:url';
 
-// https://vite.dev/config/
+const rootNodeModules = fileURLToPath(new URL('../../node_modules', import.meta.url));
+
 export default defineConfig({
   plugins: [
     react({
@@ -10,4 +12,11 @@ export default defineConfig({
       },
     }),
   ],
+  resolve: {
+    dedupe: ['react', 'react-dom'],
+    alias: {
+      react: `${rootNodeModules}/react`,
+      'react-dom': `${rootNodeModules}/react-dom`,
+    },
+  },
 });
