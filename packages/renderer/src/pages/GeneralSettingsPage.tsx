@@ -1,7 +1,7 @@
 import { Box, Text, CheckBox } from 'grommet';
 import { trpc } from '../trpc-react';
 import { CollapsiblePanel } from '@greenroom-robotics/alpha.ui/build/components';
-import ThemeToggleControl from '@greenroom-robotics/alpha.ui/build/theme/ThemeToggleControl';
+import { ThemeToggleControl } from '@greenroom-robotics/alpha.ui/build/theme/components/ThemeToggleControl';
 
 export const GeneralSettingsPage = () => {
   // Auto-start management

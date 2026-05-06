@@ -1,27 +1,8 @@
 import { Sidebar as GrommetSidebar, Box } from 'grommet';
-import { normalizeColor } from 'grommet/utils';
 import { Configure, AppsRounded } from 'grommet-icons';
-import styled from 'styled-components';
 import { Link, useLocation } from 'react-router';
 import { BarButtons } from '@greenroom-robotics/alpha.ui/build/components/BarButtons';
-import { Logo } from '@greenroom-robotics/alpha.ui/build/components';
-import { themeMode } from '@greenroom-robotics/alpha.ui/build/theme/theme.utils';
-
-interface LogoWrapperProps {
-  $color: string;
-}
-
-const LogoWrapper = styled(Box)<LogoWrapperProps>`
-  svg {
-    filter: ${(props) =>
-      themeMode(props.theme, {
-        dark: `drop-shadow(0 2px 5px ${normalizeColor(props.$color, props.theme)})`,
-        light: 'none',
-      })};
-    height: 50px;
-  }
-  margin-bottom: 15px;
-`;
+import { SidebarLogo } from '@greenroom-robotics/alpha.ui/build/components/SidebarLogo';
 
 export const Sidebar = () => {
   const location = useLocation();
@@ -36,9 +17,7 @@ export const Sidebar = () => {
     >
       <Box direction="column" align="center" flex>
         <Link to="/" style={{ textDecoration: 'background' }}>
-          <LogoWrapper $color="currentColor" background="background-front">
-            <Logo />
-          </LogoWrapper>
+          <SidebarLogo />
         </Link>
         <Box flex gap="xsmall">
           <BarButtons

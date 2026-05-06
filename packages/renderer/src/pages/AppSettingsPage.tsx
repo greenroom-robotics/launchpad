@@ -72,10 +72,9 @@ export const AppSettingsPage = () => {
 
   // Use useAsyncFn for form submission with built-in loading/error states
   const [submitState, handleSubmit] = useAsyncFn(
-    async (data: LaunchpadConfig) => {
+    async (data: LaunchpadConfig | undefined) => {
+      if (!data) return;
       await updateConfig.mutateAsync(data);
-      console.log('Configuration saved successfully');
-      return data;
     },
     [updateConfig]
   );
