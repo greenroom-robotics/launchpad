@@ -76,7 +76,7 @@ jobs:
       #       build-${{ runner.os }}-${{ hashFiles('packages/*/src/**', 'packages/*/package.json') }}-
       #       build-${{ runner.os }}-
 
-      - run: npm version "${{inputs.app-version}}" --no-git-tag-version
+      - run: npm version "${{inputs.app-version}}" --no-git-tag-version --allow-same-version
       - run: npm run compile -- -p never
         env:
           VITE_DISTRIBUTION_CHANNEL: ${{inputs.distribution-channel}}
