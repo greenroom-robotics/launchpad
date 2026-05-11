@@ -17,6 +17,7 @@ export class WindowService {
   readonly #renderer: { path: string } | URL;
   readonly #openDevTools;
   readonly #applicationWindows: Map<string, BrowserWindow> = new Map();
+  readonly #pendingLaunches: Map<string, Promise<BrowserWindow | undefined>> = new Map();
   readonly #windowMetadata: WeakMap<BrowserWindow, WindowMetadata> = new WeakMap();
 
   constructor(
@@ -128,6 +129,26 @@ export class WindowService {
       return existingWindow;
     }
 
+    // If a launch is already in progress (e.g. waiting for auth), reuse that promise
+    const pending = this.#pendingLaunches.get(applicationName);
+    if (pending) {
+      console.log(`[WindowService] Launch already in progress for ${applicationName}, waiting...`);
+      return pending;
+    }
+
+    const launchPromise = this.#doCreateApplicationWindow(url, applicationName);
+    this.#pendingLaunches.set(applicationName, launchPromise);
+    try {
+      return await launchPromise;
+    } finally {
+      this.#pendingLaunches.delete(applicationName);
+    }
+  }
+
+  async #doCreateApplicationWindow(
+    url: string,
+    applicationName: string
+  ): Promise<BrowserWindow | undefined> {
     console.log(`[WindowService] Creating application window for ${applicationName} at ${url}`);
 
     // Check if authentication is required and get credentials
