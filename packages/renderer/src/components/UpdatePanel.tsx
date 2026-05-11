@@ -33,9 +33,7 @@ export const UpdatePanel = () => {
 
     case 'available':
     case 'downloading':
-      return (
-        <Loading label={`Update ${state.info.version} available — downloading…`} direction="row" />
-      );
+      return <Loading label={`Downloading update ${state.info.version}…`} direction="row" />;
 
     case 'downloaded':
       return (

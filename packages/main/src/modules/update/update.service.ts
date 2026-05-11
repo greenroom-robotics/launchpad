@@ -3,6 +3,17 @@ import electronUpdater, { type AppUpdater, type Logger } from 'electron-updater'
 import { app, Notification } from 'electron';
 import type { UpdateInfo, UpdateState } from '@app/shared';
 
+// Internal state representation without currentVersion (which is constant for
+// the lifetime of the service). getState() folds the version back in.
+type InternalState =
+  | { kind: 'checking' }
+  | { kind: 'not-available' }
+  | { kind: 'available'; info: UpdateInfo }
+  | { kind: 'downloading'; info: UpdateInfo }
+  | { kind: 'downloaded'; info: UpdateInfo }
+  | { kind: 'error'; message: string }
+  | { kind: 'unsupported'; reason: string };
+
 @singleton()
 export class UpdateService {
   readonly #logger: Logger = {
@@ -13,7 +24,8 @@ export class UpdateService {
   };
 
   readonly #updater: AppUpdater;
-  #state: UpdateState;
+  readonly #currentVersion: string = app.getVersion();
+  #state: InternalState;
 
   constructor() {
     // Destructure to work around the CJS/ESM interop quirk in electron-updater.
@@ -22,27 +34,25 @@ export class UpdateService {
     this.#updater = autoUpdater;
     this.#updater.logger = this.#logger;
 
-    const currentVersion = app.getVersion();
-    // Initialize directly into the terminal-for-context state so the UI never
-    // observes a half-truthful intermediate (e.g. "you're on the latest" before
-    // the first check has even run).
     this.#state = isUpdaterActive()
-      ? { kind: 'checking', currentVersion }
+      ? { kind: 'checking' }
       : {
           kind: 'unsupported',
-          currentVersion,
           reason: 'Auto-updates run only in installed release builds.',
         };
 
     this.#attachUpdaterListeners();
 
     if (this.#state.kind === 'checking') {
-      void this.checkNow();
+      // Bypass checkNow()'s "already checking" guard which would reject the
+      // initial call we just primed state for. The 'error' event handler owns
+      // the transition if the check itself fails.
+      void this.#updater.checkForUpdates().catch(() => {});
     }
   }
 
   getState(): UpdateState {
-    return this.#state;
+    return { ...this.#state, currentVersion: this.#currentVersion };
   }
 
   async checkNow(): Promise<void> {
@@ -53,7 +63,7 @@ export class UpdateService {
     ) {
       return;
     }
-    this.#setState({ kind: 'checking', currentVersion: this.#state.currentVersion });
+    this.#setState({ kind: 'checking' });
     try {
       await this.#updater.checkForUpdates();
     } catch {
@@ -68,49 +78,33 @@ export class UpdateService {
     this.#updater.quitAndInstall(false, true);
   }
 
-  #setState(next: UpdateState): void {
+  #setState(next: InternalState): void {
     this.#state = next;
   }
 
   #attachUpdaterListeners(): void {
     this.#updater.on('checking-for-update', () => {
-      this.#setState({ kind: 'checking', currentVersion: this.#state.currentVersion });
+      this.#setState({ kind: 'checking' });
     });
     this.#updater.on('update-available', (info) => {
-      this.#setState({
-        kind: 'available',
-        currentVersion: this.#state.currentVersion,
-        info: mapInfo(info),
-      });
+      this.#setState({ kind: 'available', info: mapInfo(info) });
     });
     this.#updater.on('update-not-available', () => {
-      this.#setState({ kind: 'not-available', currentVersion: this.#state.currentVersion });
+      this.#setState({ kind: 'not-available' });
     });
     this.#updater.on('download-progress', () => {
       // Transition once on the first progress event; we don't expose progress data.
       if (this.#state.kind === 'available') {
-        this.#setState({
-          kind: 'downloading',
-          currentVersion: this.#state.currentVersion,
-          info: this.#state.info,
-        });
+        this.#setState({ kind: 'downloading', info: this.#state.info });
       }
     });
     this.#updater.on('update-downloaded', (info) => {
       const mapped = mapInfo(info);
-      this.#setState({
-        kind: 'downloaded',
-        currentVersion: this.#state.currentVersion,
-        info: mapped,
-      });
+      this.#setState({ kind: 'downloaded', info: mapped });
       this.#notifyDownloaded(mapped);
     });
     this.#updater.on('error', (error) => {
-      this.#setState({
-        kind: 'error',
-        currentVersion: this.#state.currentVersion,
-        message: error?.message ?? 'Unknown error',
-      });
+      this.#setState({ kind: 'error', message: error?.message ?? 'Unknown error' });
     });
   }
 
