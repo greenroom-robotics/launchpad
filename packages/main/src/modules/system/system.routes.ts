@@ -80,25 +80,20 @@ export const systemRouter = router({
     }),
 
   // Auto-start management
-  getAutoStartStatus: publicProcedure
+  getAutoStartState: publicProcedure
     .use(injectService<AutoStartService>(AutoStartService))
-    .query(({ ctx }) => {
-      return { enabled: ctx.service.getAutoStartStatus() };
-    }),
+    .query(({ ctx }) => ctx.service.getState()),
 
   enableAutoStart: publicProcedure
-    .input(z.object({ openAsHidden: z.boolean().default(true) }))
     .use(injectService<AutoStartService>(AutoStartService))
-    .mutation(({ ctx, input }) => {
-      ctx.service.enableAutoStart(input.openAsHidden);
-      return { success: true };
+    .mutation(({ ctx }) => {
+      ctx.service.enable();
     }),
 
   disableAutoStart: publicProcedure
     .use(injectService<AutoStartService>(AutoStartService))
     .mutation(({ ctx }) => {
-      ctx.service.disableAutoStart();
-      return { success: true };
+      ctx.service.disable();
     }),
 
   // Menu management
