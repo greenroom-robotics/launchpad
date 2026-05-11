@@ -4,7 +4,7 @@ import type { RJSFSchema } from '@greenroom-robotics/alpha.schema-form';
 import chartImage from '../assets/chart.jpg';
 import { useState } from 'react';
 import { trpc } from '../trpc-react';
-import { TexturedPanel } from '../components/TexturedPanel';
+import { TexturedPanel } from '@greenroom-robotics/alpha.ui/build/components';
 
 interface LoginPageProps {
   url: string;
@@ -90,7 +90,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
   // No loading states needed - data comes from query parameters
 
   return (
-    <TexturedPanel fill direction="row">
+    <TexturedPanel fill direction="row" $backgroundColor="background-front" $dotColor="border">
       <Box
         flex
         style={{
@@ -98,7 +98,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'right',
-          backgroundColor: 'black',
         }}
         width="medium"
       />
@@ -112,9 +111,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
         </Box>
         {error && (
           <Box flex={false} pad="small" background="status-error">
-            <Text color="white" size="small">
-              {error}
-            </Text>
+            <Text size="small">{error}</Text>
           </Box>
         )}
         <Box flex={false} margin={{ top: 'small' }} border pad="small">
@@ -136,7 +133,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ url, realm }) => {
                 color="green"
                 disabled={submitCredentials.isPending}
               />
-              <Button type="button" color="white" label="Cancel" onClick={handleCancel} />
+              <Button type="button" label="Cancel" onClick={handleCancel} />
             </Box>
           </SchemaForm>
         </Box>

@@ -1,17 +1,8 @@
 import { Sidebar as GrommetSidebar, Box } from 'grommet';
 import { Configure, AppsRounded } from 'grommet-icons';
-import styled from 'styled-components';
 import { Link, useLocation } from 'react-router';
-import { SidebarButton } from './SidebarButton';
-import logoWhite from '/logo-white.svg';
-
-const Logo = styled(Box)`
-  img {
-    filter: drop-shadow(0 2px 5px white);
-    height: 50px;
-  }
-  margin-bottom: 15px;
-`;
+import { BarButtons } from '@greenroom-robotics/alpha.ui/build/components/BarButtons';
+import { SidebarLogo } from '@greenroom-robotics/alpha.ui/build/components/SidebarLogo';
 
 export const Sidebar = () => {
   const location = useLocation();
@@ -19,40 +10,30 @@ export const Sidebar = () => {
 
   return (
     <GrommetSidebar
-      background="dark-3"
-      color="white"
-      style={{ position: 'relative', width: '77px' }}
+      background={'background-front'}
+      color="background"
+      style={{ position: 'relative', width: '77px', borderRight: '1px solid background' }}
       flex={false}
     >
-      <Link to="/" style={{ textDecoration: 'white' }}>
-        <Logo background="black">
-          <img src={logoWhite} />
-        </Logo>
-      </Link>
-      <Box flex gap="xsmall">
-        <SidebarButton
-          tip="Launchpad"
-          pathName={route}
-          active={route === '/'}
-          to={`/`}
-          icon={<AppsRounded />}
-        />
-        {/* <SidebarButton
-            tip="Install"
-            pathName={route}
-            active={route.startsWith('/installer')}
-            to={`/installer`}
-            icon={<Install />}
-          /> */}
-      </Box>
-      <Box gap="xsmall" flex={false}>
-        <SidebarButton
-          tip="Settings"
-          pathName={route}
-          active={route.includes('/settings')}
-          to={`/settings`}
-          icon={<Configure />}
-        />
+      <Box direction="column" align="center" flex>
+        <Link to="/" style={{ textDecoration: 'background' }}>
+          <SidebarLogo />
+        </Link>
+        <Box flex gap="xsmall">
+          <BarButtons
+            items={[
+              { to: '/', tip: 'Launchpad', icon: <AppsRounded /> },
+              {
+                to: '/settings',
+                tip: 'Settings',
+                icon: <Configure />,
+                active: route.includes('/settings'),
+              },
+              // {to:'/installer', tip:"Install", icon: <Install/>, active:route.startsWith('/installer')  }
+            ]}
+            justify="between"
+          />
+        </Box>
       </Box>
     </GrommetSidebar>
   );

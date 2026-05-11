@@ -2,17 +2,18 @@ import { Box, Heading, Text } from 'grommet';
 import { useAsyncFn, useInterval, useEffectOnce } from 'react-use';
 import { Loading } from './Loading';
 import { useState } from 'react';
-import gamaHeroImage from '/gama-hero-box.svg';
-import lookoutHeroImage from '/lookout-hero-box.svg';
-import maropsHeroImage from '/marops-hero-box.svg';
-import missimHeroImage from '/missim-hero-box.svg';
-import type { ApplicationInstance } from '@app/shared';
 
-const applicationImages = {
-  gama: gamaHeroImage,
-  lookout: lookoutHeroImage,
-  marops: maropsHeroImage,
-  missim: missimHeroImage,
+import type { ApplicationInstance } from '@app/shared';
+import { GamaHeroBoxSvg } from './GamaHeroBoxSvg';
+import { LookoutHeroBoxSvg } from './LookoutHeroBoxSvg';
+import { MissimHeroBoxSvg } from './MissimHeroBoxSvg';
+import { MaropsHeroBoxSvg } from './MaropsHeroBoxSvg';
+
+const applicationComponents = {
+  gama: GamaHeroBoxSvg,
+  lookout: LookoutHeroBoxSvg,
+  marops: MaropsHeroBoxSvg,
+  missim: MissimHeroBoxSvg,
 } as const;
 
 export interface IApplicationTileProps {
@@ -70,11 +71,11 @@ export const ApplicationTile = ({
       setIsClickLoading(false);
     }
   };
-  const src = applicationImages[application.type];
+  const HeroComponent = applicationComponents[application.type];
 
   const getStatusColor = () => {
-    if (loading) return 'status-unknown';
-    return connected ? 'status-ok' : 'status-error';
+    if (loading) return 'grey';
+    return connected ? 'green' : 'red';
   };
 
   const getStatusText = () => {
@@ -87,7 +88,7 @@ export const ApplicationTile = ({
       onClick={isClickable ? handleClick : undefined}
       style={{
         cursor: isClickable && !isClickLoading ? 'pointer' : 'default',
-        opacity: connected ? 1 : 0.8,
+        opacity: connected ? 1 : 0.7,
         position: 'relative',
       }}
       hoverIndicator={isClickable && !isClickLoading ? true : false}
@@ -103,14 +104,7 @@ export const ApplicationTile = ({
           {getStatusText()}
         </Text>
       </Box>
-      <img
-        src={src}
-        alt="Application Hero"
-        style={{
-          filter: connected ? 'none' : 'grayscale(100%)',
-          transition: 'filter 0.3s ease',
-        }}
-      />
+      <HeroComponent connected={connected} color={{ connected: 'green', disconnected: 'red' }} />
       <Loading overlay show={isClickLoading} background="rgba(0,0,0,0.5)" />
     </Box>
   );

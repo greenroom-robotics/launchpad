@@ -1,6 +1,7 @@
 import { Box, Text, CheckBox } from 'grommet';
 import { trpc } from '../trpc-react';
 import { CollapsiblePanel } from '@greenroom-robotics/alpha.ui/build/components';
+import { ThemeToggleControl } from '@greenroom-robotics/alpha.ui/build/theme/components/ThemeToggleControl';
 
 export const GeneralSettingsPage = () => {
   // Auto-start management
@@ -87,6 +88,13 @@ export const GeneralSettingsPage = () => {
         <Text size="small" color="text-weak">
           Automatic update management will be available in a future release
         </Text>
+      </CollapsiblePanel>
+      <CollapsiblePanel label="Theme" defaultOpen>
+        <Text size="small" margin={{ bottom: 'small' }}>
+          Set the visual theme for launchpad
+        </Text>
+
+        <ThemeToggleControl />
       </CollapsiblePanel>
     </Box>
   );

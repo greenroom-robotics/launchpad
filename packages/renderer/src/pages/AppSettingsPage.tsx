@@ -72,10 +72,9 @@ export const AppSettingsPage = () => {
 
   // Use useAsyncFn for form submission with built-in loading/error states
   const [submitState, handleSubmit] = useAsyncFn(
-    async (data: LaunchpadConfig) => {
+    async (data: LaunchpadConfig | undefined) => {
+      if (!data) return;
       await updateConfig.mutateAsync(data);
-      console.log('Configuration saved successfully');
-      return data;
     },
     [updateConfig]
   );
@@ -196,22 +195,17 @@ export const AppSettingsPage = () => {
       {/* Show save status */}
       {isSaving && (
         <Box pad="small" background="status-unknown" margin={{ bottom: 'small' }}>
-          <Text color="white">Saving configuration...</Text>
+          <Text>Saving configuration...</Text>
         </Box>
       )}
       {submitError && (
         <Box pad="small" background="status-error" margin={{ bottom: 'small' }}>
-          <Text color="white">Error saving: {submitError.message}</Text>
+          <Text>Error saving: {submitError.message}</Text>
         </Box>
       )}
       {savedConfig && !isSaving && !submitError && (
-        <Box
-          pad="small"
-          background="green"
-          margin={{ bottom: 'small' }}
-          border={{ color: 'white' }}
-        >
-          <Text color="white">Configuration saved successfully!</Text>
+        <Box pad="small" background="green" margin={{ bottom: 'small' }}>
+          <Text>Configuration saved successfully!</Text>
         </Box>
       )}
 
