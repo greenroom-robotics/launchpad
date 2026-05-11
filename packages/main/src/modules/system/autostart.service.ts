@@ -1,123 +1,42 @@
 import { singleton, inject } from 'tsyringe';
-import { app } from 'electron';
 import { TYPES } from '../../types.js';
-
-interface AutoStartOptions {
-  enabled?: boolean;
-  openAtLogin?: boolean;
-  openAsHidden?: boolean;
-}
+import type { AutoStartState } from '@app/shared';
 
 @singleton()
 export class AutoStartService {
-  readonly #options: AutoStartOptions;
+  readonly #unsupportedReason: string | null;
 
-  constructor(@inject(TYPES.ElectronApp) private app: Electron.App) {
-    this.#options = {
-      enabled: true,
-      openAtLogin: true,
-      openAsHidden: true,
-    };
-
-    // Initialize auto-start setup
-    if (this.#options.enabled) {
-      this.initializeAsync();
+  constructor(@inject(TYPES.ElectronApp) private readonly app: Electron.App) {
+    if (!app.isPackaged) {
+      this.#unsupportedReason = 'Open at login is only available in installed release builds.';
+    } else if (process.platform === 'linux') {
+      this.#unsupportedReason = 'Open at login is not supported on Linux.';
+    } else {
+      this.#unsupportedReason = null;
     }
   }
 
-  private async initializeAsync(): Promise<void> {
-    await this.app.whenReady();
-    this.setupAutoStart();
+  getState(): AutoStartState {
+    if (this.#unsupportedReason !== null) {
+      return { kind: 'unsupported', reason: this.#unsupportedReason };
+    }
+    return this.app.getLoginItemSettings().openAtLogin ? { kind: 'enabled' } : { kind: 'disabled' };
   }
 
-  private setupAutoStart(): void {
-    if (!this.#options.openAtLogin) {
-      return;
-    }
-
-    // Configure the app to start at login
-    app.setLoginItemSettings({
+  enable(): void {
+    if (this.#unsupportedReason !== null) return;
+    // process.execPath is stable across updates here: electron-builder's NSIS
+    // installer (perMachine: false) replaces the binary in place rather than
+    // versioning the directory, so a stored login-item path remains valid.
+    this.app.setLoginItemSettings({
       openAtLogin: true,
-      openAsHidden: this.#options.openAsHidden ?? true,
-      name: 'Greenroom Launchpad',
+      name: this.app.getName(),
       path: process.execPath,
     });
-
-    console.log('AutoStartService: Configured app to start at login');
   }
 
-  // Method to disable auto-start (can be called from settings)
-  disableAutoStart(): void {
-    // Check if we're in development
-    const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
-
-    if (isDev) {
-      console.log('AutoStartService: Auto-start not available in development mode');
-      return;
-    }
-
-    app.setLoginItemSettings({
-      openAtLogin: false,
-    });
-
-    // Verify the setting was applied
-    setTimeout(() => {
-      const verifySettings = app.getLoginItemSettings();
-      console.log(
-        'AutoStartService: Verification - login item settings after disable:',
-        verifySettings
-      );
-    }, 100);
-
-    console.log('AutoStartService: Disabled auto-start');
-  }
-
-  // Method to enable auto-start (can be called from settings)
-  enableAutoStart(openAsHidden: boolean = true): void {
-    // Check if we're in development
-    const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
-
-    if (isDev) {
-      console.log('AutoStartService: Auto-start not available in development mode');
-      return;
-    }
-
-    const settings = {
-      openAtLogin: true,
-      openAsHidden: openAsHidden,
-      name: 'Greenroom Launchpad',
-      path: process.execPath,
-    };
-
-    console.log('AutoStartService: Setting login item with:', settings);
-    app.setLoginItemSettings(settings);
-
-    // Verify the setting was applied
-    setTimeout(() => {
-      const verifySettings = app.getLoginItemSettings();
-      console.log(
-        'AutoStartService: Verification - login item settings after enable:',
-        verifySettings
-      );
-    }, 100);
-
-    console.log('AutoStartService: Enabled auto-start');
-  }
-
-  // Check current auto-start status
-  getAutoStartStatus(): boolean {
-    // Check if we're in development
-    const isDev = process.env.NODE_ENV === 'development' || !app.isPackaged;
-
-    if (isDev) {
-      console.log(
-        'AutoStartService: Auto-start not available in development mode, returning false'
-      );
-      return false;
-    }
-
-    const settings = app.getLoginItemSettings();
-    console.log('AutoStartService: Current login item settings:', settings);
-    return settings.openAtLogin;
+  disable(): void {
+    if (this.#unsupportedReason !== null) return;
+    this.app.setLoginItemSettings({ openAtLogin: false });
   }
 }

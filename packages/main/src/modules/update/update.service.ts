@@ -1,151 +1,143 @@
 import { singleton } from 'tsyringe';
-import electronUpdater, {
-  type AppUpdater,
-  type Logger,
-  type UpdateInfo,
-  type ProgressInfo,
-} from 'electron-updater';
-import { app } from 'electron';
+import electronUpdater, { type AppUpdater, type Logger } from 'electron-updater';
+import { app, Notification } from 'electron';
+import type { UpdateInfo, UpdateState } from '@app/shared';
 
-type DownloadNotification = Parameters<AppUpdater['checkForUpdatesAndNotify']>[0];
+// Internal state representation without currentVersion (which is constant for
+// the lifetime of the service). getState() folds the version back in.
+type InternalState =
+  | { kind: 'checking' }
+  | { kind: 'not-available' }
+  | { kind: 'available'; info: UpdateInfo }
+  | { kind: 'downloading'; info: UpdateInfo }
+  | { kind: 'downloaded'; info: UpdateInfo }
+  | { kind: 'error'; message: string }
+  | { kind: 'unsupported'; reason: string };
 
 @singleton()
 export class UpdateService {
-  readonly #logger: Logger;
-  readonly #notification: DownloadNotification;
+  readonly #logger: Logger = {
+    info: (msg) => console.log('[autoUpdater]', msg),
+    warn: (msg) => console.warn('[autoUpdater]', msg),
+    error: (msg) => console.error('[autoUpdater]', msg),
+    debug: (msg) => console.debug('[autoUpdater]', msg),
+  };
+
+  readonly #updater: AppUpdater;
+  readonly #currentVersion: string = app.getVersion();
+  #state: InternalState;
 
   constructor() {
-    this.#logger = {
-      info: (msg) => console.log('[autoUpdater]', msg),
-      warn: (msg) => console.warn('[autoUpdater]', msg),
-      error: (msg) => console.error('[autoUpdater]', msg),
-      debug: (msg) => console.debug('[autoUpdater]', msg),
-    };
-    this.#notification = undefined;
-
-    // Initialize auto-updater immediately
-    this.runAutoUpdater();
-  }
-
-  getAutoUpdater(): AppUpdater {
-    // Using destructuring to access autoUpdater due to the CommonJS module of 'electron-updater'.
-    // It is a workaround for ESM compatibility issues, see https://github.com/electron-userland/electron-builder/issues/7976.
+    // Destructure to work around the CJS/ESM interop quirk in electron-updater.
+    // See https://github.com/electron-userland/electron-builder/issues/7976.
     const { autoUpdater } = electronUpdater;
-    return autoUpdater;
+    this.#updater = autoUpdater;
+    this.#updater.logger = this.#logger;
+
+    this.#state = isUpdaterActive()
+      ? { kind: 'checking' }
+      : {
+          kind: 'unsupported',
+          reason: 'Auto-updates run only in installed release builds.',
+        };
+
+    this.#attachUpdaterListeners();
+
+    if (this.#state.kind === 'checking') {
+      // Bypass checkNow()'s "already checking" guard which would reject the
+      // initial call we just primed state for. The 'error' event handler owns
+      // the transition if the check itself fails.
+      void this.#updater.checkForUpdates().catch(() => {});
+    }
   }
 
-  async runAutoUpdater() {
-    const updater = this.getAutoUpdater();
+  getState(): UpdateState {
+    return { ...this.#state, currentVersion: this.#currentVersion };
+  }
 
-    // Set up error handlers to prevent crashes
-    updater.on('error', (error) => {
-      console.warn('AutoUpdater error (ignored):', error.message);
+  async checkNow(): Promise<void> {
+    if (
+      this.#state.kind === 'unsupported' ||
+      this.#state.kind === 'checking' ||
+      this.#state.kind === 'downloading'
+    ) {
+      return;
+    }
+    this.#setState({ kind: 'checking' });
+    try {
+      await this.#updater.checkForUpdates();
+    } catch {
+      // electron-updater also emits an 'error' event; the listener owns the transition.
+    }
+  }
+
+  installNow(): void {
+    if (this.#state.kind !== 'downloaded') return;
+    // isForceRunAfter=true so the app deterministically relaunches after
+    // install across all platforms (the default skips relaunch on macOS/Linux).
+    this.#updater.quitAndInstall(false, true);
+  }
+
+  #setState(next: InternalState): void {
+    this.#state = next;
+  }
+
+  #attachUpdaterListeners(): void {
+    this.#updater.on('checking-for-update', () => {
+      this.#setState({ kind: 'checking' });
     });
-
-    try {
-      updater.logger = this.#logger;
-      updater.fullChangelog = true;
-
-      // Skip auto-updates for development channels or when running tests.
-      // The release channel ships plain semver on the default 'latest' channel,
-      // so we deliberately do not set updater.channel here.
-      if (
-        import.meta.env.VITE_DISTRIBUTION_CHANNEL &&
-        import.meta.env.VITE_DISTRIBUTION_CHANNEL !== 'release'
-      ) {
-        console.log('Skipping auto-updater for non-release channel');
-        return null;
+    this.#updater.on('update-available', (info) => {
+      this.#setState({ kind: 'available', info: mapInfo(info) });
+    });
+    this.#updater.on('update-not-available', () => {
+      this.#setState({ kind: 'not-available' });
+    });
+    this.#updater.on('download-progress', () => {
+      // Transition once on the first progress event; we don't expose progress data.
+      if (this.#state.kind === 'available') {
+        this.#setState({ kind: 'downloading', info: this.#state.info });
       }
-
-      return await updater.checkForUpdatesAndNotify(this.#notification);
-    } catch (error) {
-      if (error instanceof Error) {
-        if (
-          error.message.includes('No published versions') ||
-          error.message.includes('status 404') ||
-          error.message.includes('Cannot download')
-        ) {
-          console.warn('AutoUpdater: No updates available or network error (ignored)');
-          return null;
-        }
-      }
-
-      console.warn('AutoUpdater: Unexpected error (ignored):', error);
-      return null;
-    }
+    });
+    this.#updater.on('update-downloaded', (info) => {
+      const mapped = mapInfo(info);
+      this.#setState({ kind: 'downloaded', info: mapped });
+      this.#notifyDownloaded(mapped);
+    });
+    this.#updater.on('error', (error) => {
+      this.#setState({ kind: 'error', message: error?.message ?? 'Unknown error' });
+    });
   }
 
-  // Additional update management methods
-  async checkForUpdates(): Promise<{ updateInfo?: UpdateInfo } | null> {
-    const updater = this.getAutoUpdater();
-    try {
-      return await updater.checkForUpdates();
-    } catch (error) {
-      console.error('Error checking for updates:', error);
-      throw error;
-    }
+  #notifyDownloaded(info: UpdateInfo): void {
+    if (!Notification.isSupported()) return;
+    const notification = new Notification({
+      title: 'Update ready to install',
+      body: `Version ${info.version} will be applied next time you restart. Click to restart now.`,
+    });
+    notification.on('click', () => this.installNow());
+    notification.show();
   }
+}
 
-  async downloadUpdate(): Promise<string[]> {
-    const updater = this.getAutoUpdater();
-    return updater.downloadUpdate();
-  }
+function isUpdaterActive(): boolean {
+  if (!app.isPackaged) return false;
+  const channel = import.meta.env.VITE_DISTRIBUTION_CHANNEL;
+  return !channel || channel === 'release';
+}
 
-  quitAndInstall(isSilent: boolean = false, isForceRunAfter: boolean = false): void {
-    const updater = this.getAutoUpdater();
-    updater.quitAndInstall(isSilent, isForceRunAfter);
+function mapInfo(info: {
+  version: string;
+  releaseNotes?: string | Array<{ version: string; note: string | null }> | null;
+}): UpdateInfo {
+  let releaseNotes: string | null = null;
+  if (typeof info.releaseNotes === 'string') {
+    releaseNotes = info.releaseNotes;
+  } else if (Array.isArray(info.releaseNotes)) {
+    const joined = info.releaseNotes
+      .map((n) => n.note)
+      .filter((n): n is string => !!n)
+      .join('\n\n');
+    releaseNotes = joined || null;
   }
-
-  // Set up event listeners
-  onUpdateAvailable(callback: (info: UpdateInfo) => void): void {
-    const updater = this.getAutoUpdater();
-    updater.on('update-available', callback);
-  }
-
-  onUpdateNotAvailable(callback: (info: UpdateInfo) => void): void {
-    const updater = this.getAutoUpdater();
-    updater.on('update-not-available', callback);
-  }
-
-  onUpdateDownloaded(callback: (info: UpdateInfo) => void): void {
-    const updater = this.getAutoUpdater();
-    updater.on('update-downloaded', callback);
-  }
-
-  onDownloadProgress(callback: (progress: ProgressInfo) => void): void {
-    const updater = this.getAutoUpdater();
-    updater.on('download-progress', callback);
-  }
-
-  onError(callback: (error: Error) => void): void {
-    const updater = this.getAutoUpdater();
-    updater.on('error', callback);
-  }
-
-  // Get current version
-  getCurrentVersion(): string {
-    return app.getVersion();
-  }
-
-  // Set update channel
-  setChannel(channel: string): void {
-    const updater = this.getAutoUpdater();
-    updater.channel = channel;
-  }
-
-  getChannel(): string {
-    const updater = this.getAutoUpdater();
-    return updater.channel || 'latest';
-  }
-
-  // Configure update behavior
-  setAutoDownload(autoDownload: boolean): void {
-    const updater = this.getAutoUpdater();
-    updater.autoDownload = autoDownload;
-  }
-
-  setAutoInstallOnAppQuit(autoInstall: boolean): void {
-    const updater = this.getAutoUpdater();
-    updater.autoInstallOnAppQuit = autoInstall;
-  }
+  return { version: info.version, releaseNotes };
 }

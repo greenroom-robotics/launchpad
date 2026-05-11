@@ -1,139 +1,59 @@
 # Release Process
 
-This document describes how to create releases for the Greenroom Launchpad application.
-
-## Overview
-
-The project uses a tag-based release system with semantic versioning. When you create a version tag, it automatically triggers the build and release process.
+The project uses a tag-based release flow with semantic versioning. Pushing a `v*.*.*` tag triggers the release workflow.
 
 ## Creating a Release
 
-### 1. Prepare for Release
+1. Make sure `main` is green.
+2. Tag and push:
 
-1. Ensure all changes are merged to the `main` branch
-2. Verify that the latest CI build is passing
-3. Update any version-specific documentation if needed
+   ```bash
+   git tag v1.2.3
+   git push origin v1.2.3
+   ```
 
-### 2. Create a Release Tag
+3. The Release workflow validates the tag, builds for Windows/macOS/Linux, runs tests, and creates a **draft** GitHub release with auto-generated notes.
+4. Review the draft on the [Releases page](../../releases), edit notes if needed, then publish.
 
-Create and push a semantic version tag in the format `v{MAJOR}.{MINOR}.{PATCH}`:
+Bumping `package.json` to match the tag before pushing is optional — the workflow injects the tag's version into the build. Bumping just keeps local dev builds showing the right version.
 
-```bash
-# Example: creating version 1.2.3
-git tag v1.2.3
-git push origin v1.2.3
-```
+## Manual Trigger
 
-### 3. Monitor the Release Process
-
-After pushing the tag:
-
-1. The **Release workflow** will automatically trigger
-2. The workflow will:
-   - Validate the tag format
-   - Build the application for all platforms (Windows, macOS, Linux)
-   - Run tests on all platforms
-   - Create release artifacts
-   - Generate release notes from commit history
-   - Create a **draft** GitHub release
-
-### 4. Publish the Release
-
-1. Go to the [Releases page](../../releases)
-2. Find the draft release that was created
-3. Review the release notes and artifacts
-4. Edit the release notes if needed
-5. Click **"Publish release"** to make it public
-
-## Manual Release Trigger
-
-You can also trigger a release manually from the GitHub Actions tab:
-
-1. Go to [Actions](../../actions)
-2. Select the "Release" workflow
-3. Click "Run workflow"
-4. Enter the tag name (e.g., `v1.2.3`)
-5. Click "Run workflow"
+From the [Actions tab](../../actions) → Release → "Run workflow", enter a tag name. The workflow creates the tag and runs the same flow.
 
 ## Release Artifacts
 
-Each release includes the following artifacts:
+| Platform              | Filename                                        |
+| --------------------- | ----------------------------------------------- |
+| Windows               | `greenroom-launchpad-{version}-win-x64.exe`     |
+| macOS (Apple Silicon) | `greenroom-launchpad-{version}-mac-arm64.dmg`   |
+| Linux                 | `greenroom-launchpad-{version}-linux-amd64.deb` |
 
-- **Windows**: `greenroom-launchpad-{version}-win-x64.exe`
-- **macOS (Apple Silicon)**: `greenroom-launchpad-{version}-mac-arm64.dmg`
-- **macOS (Intel)**: `greenroom-launchpad-{version}-mac-x64.dmg`
-- **Linux**: `greenroom-launchpad-{version}-linux-x64.deb`
-- **Auto-update files**: `latest*.yml` (for electron-updater)
+Each release also includes `*.zip` (macOS auto-update), `*.blockmap` (delta updates), and `latest*.yml` (electron-updater metadata).
 
-## Version Numbering
-
-We follow [Semantic Versioning](https://semver.org/):
-
-- **MAJOR**: Incompatible API changes
-- **MINOR**: New functionality (backward compatible)
-- **PATCH**: Bug fixes (backward compatible)
-
-Examples:
-
-- `v1.0.0` - Initial release
-- `v1.1.0` - New feature added
-- `v1.1.1` - Bug fix
-- `v2.0.0` - Breaking change
-
-## CI/CD Workflows
-
-### Main CI (`.github/workflows/main.yml`)
-
-- Runs on every push to `main` and pull requests
-- Builds and tests the application
-- Used for development validation
-
-### Entry CI (`.github/workflows/ci.yml`)
-
-- Reusable workflow called by other workflows
-- Handles the core build and test logic
-- Accepts `distribution-channel` parameter
-
-### Release (`.github/workflows/release.yml`)
-
-- Triggered by version tags (`v*.*.*`)
-- Builds release artifacts for all platforms
-- Creates GitHub releases with auto-generated notes
+Intel Mac builds are not currently produced.
 
 ## Auto-Updates
 
-The application includes auto-update functionality:
+Release builds check for updates on launch. When one is downloaded, the user gets an OS notification and an in-app prompt to restart.
 
-- Release builds include update metadata files
-- Users will be automatically notified of new versions
-- Updates are delivered through GitHub Releases
+Linux `.deb` clients are notified but must install new releases manually — electron-updater cannot self-install deb packages.
 
-## Troubleshooting
+Clients on v0.0.7 or earlier cannot auto-update due to a filename mismatch in their installed `latest*.yml`; those users must manually install v0.0.8 once, after which updates flow normally.
 
-### Tag Format Issues
+## Version Numbering
 
-- Ensure tags follow the exact format: `v{MAJOR}.{MINOR}.{PATCH}`
-- Valid: `v1.0.0`, `v2.1.3`, `v0.1.0`
-- Invalid: `1.0.0`, `v1.0`, `v1.0.0-beta`
+[Semantic Versioning](https://semver.org/) — `MAJOR.MINOR.PATCH`. Tags must match `v{MAJOR}.{MINOR}.{PATCH}` exactly (no pre-release suffixes).
 
-### Release Workflow Failures
+## Retrying a Failed Release
 
-1. Check the [Actions tab](../../actions) for error details
-2. Common issues:
-   - Build failures (check compilation errors)
-   - Test failures (fix tests before releasing)
-   - Permission issues (check repository settings)
+```bash
+git push origin :refs/tags/v1.2.3   # delete remote tag
+git tag -d v1.2.3                   # delete local tag
+# delete the draft release on GitHub, push a fix, then re-tag
+```
 
-### Manual Cleanup
+## Distribution Channels
 
-If a release fails and you need to retry:
-
-1. Delete the failed tag: `git tag -d v1.0.0 && git push origin :refs/tags/v1.0.0`
-2. Delete the draft release from GitHub
-3. Fix any issues and recreate the tag
-
-## Development vs Release Channels
-
-- **Development**: Uses `'dev'` distribution channel for testing
-- **Release**: Uses `'release'` distribution channel for production
-- Channels can affect update behavior and application behavior
+- `release` — used by the Release workflow. Ships plain semver and propagates via `latest.yml`.
+- `dev` — used by main-branch CI for validation builds. Auto-updater is inactive on non-release channels.
