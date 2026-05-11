@@ -11,7 +11,7 @@ export const Sidebar = () => {
 
   return (
     <GrommetSidebar
-        background={{ color: 'background', opacity: opacity3 }}
+      background={{ color: 'background', opacity: opacity3 }}
       color="background"
       style={{ position: 'relative', width: '77px' }}
       flex={false}

@@ -16,15 +16,17 @@ export const SettingsPage = memo(() => {
       <Header title="Launchpad - Settings" border={{ side: 'bottom', size: '1px' }} />
       <Box fill direction="row">
         <DetailedSidebar
-          items={[{
-            id: 'settings',
-            label: 'Settings',
-            items: [
-              { id: '/settings/apps', label: 'Applications' },
-              { id: '/settings/auth', label: 'Authentication' },
-              { id: '/settings/general', label: 'System' },
-            ],
-          }]}
+          items={[
+            {
+              id: 'settings',
+              label: 'Settings',
+              items: [
+                { id: '/settings/apps', label: 'Applications' },
+                { id: '/settings/auth', label: 'Authentication' },
+                { id: '/settings/general', label: 'System' },
+              ],
+            },
+          ]}
           width="220px"
           border="right"
           isItemActive={(itemId) => location.pathname === itemId}
