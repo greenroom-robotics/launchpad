@@ -11,11 +11,16 @@ type DownloadNotification = Parameters<AppUpdater['checkForUpdatesAndNotify']>[0
 
 @singleton()
 export class UpdateService {
-  readonly #logger: Logger | null;
+  readonly #logger: Logger;
   readonly #notification: DownloadNotification;
 
   constructor() {
-    this.#logger = null;
+    this.#logger = {
+      info: (msg) => console.log('[autoUpdater]', msg),
+      warn: (msg) => console.warn('[autoUpdater]', msg),
+      error: (msg) => console.error('[autoUpdater]', msg),
+      debug: (msg) => console.debug('[autoUpdater]', msg),
+    };
     this.#notification = undefined;
 
     // Initialize auto-updater immediately
@@ -38,20 +43,18 @@ export class UpdateService {
     });
 
     try {
-      updater.logger = this.#logger || null;
+      updater.logger = this.#logger;
       updater.fullChangelog = true;
 
-      // Skip auto-updates for development channels or when running tests
+      // Skip auto-updates for development channels or when running tests.
+      // The release channel ships plain semver on the default 'latest' channel,
+      // so we deliberately do not set updater.channel here.
       if (
         import.meta.env.VITE_DISTRIBUTION_CHANNEL &&
         import.meta.env.VITE_DISTRIBUTION_CHANNEL !== 'release'
       ) {
         console.log('Skipping auto-updater for non-release channel');
         return null;
-      }
-
-      if (import.meta.env.VITE_DISTRIBUTION_CHANNEL) {
-        updater.channel = import.meta.env.VITE_DISTRIBUTION_CHANNEL;
       }
 
       return await updater.checkForUpdatesAndNotify(this.#notification);

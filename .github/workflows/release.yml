@@ -48,17 +48,16 @@ jobs:
           echo "Release tag: $TAG"
           echo "Release version: $VERSION"
 
-  update-version:
+  create-tag:
     needs: validate-tag
+    if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
           token: ${{ github.token }}
-
-      - name: Create tag if workflow_dispatch
-        if: github.event_name == 'workflow_dispatch'
+      - name: Create tag at current main
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
@@ -67,21 +66,18 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
-      - name: Update package.json version
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          npm version ${{ needs.validate-tag.outputs.version }} --no-git-tag-version
-          git add package.json package-lock.json
-          git commit -m "chore: bump version to ${{ needs.validate-tag.outputs.version }}"
-          git push origin main
-
   release:
-    needs: [validate-tag, update-version]
+    needs: [validate-tag, create-tag]
+    # create-tag only runs on workflow_dispatch; for tag-push releases skip the dependency.
+    if: |
+      always() &&
+      needs.validate-tag.result == 'success' &&
+      (needs.create-tag.result == 'success' || needs.create-tag.result == 'skipped')
     uses: ./.github/workflows/ci.yml
     secrets: inherit
     with:
       distribution-channel: 'release'
+      app-version-override: ${{ needs.validate-tag.outputs.version }}
     permissions:
       contents: write
       id-token: write
@@ -133,7 +129,7 @@ jobs:
           Choose the appropriate installer for your platform:
           - **Windows**: \`greenroom-launchpad-${{ needs.validate-tag.outputs.version }}-win-x64.exe\`
           - **macOS**: \`greenroom-launchpad-${{ needs.validate-tag.outputs.version }}-mac-arm64.dmg\` or \`greenroom-launchpad-${{ needs.validate-tag.outputs.version }}-mac-x64.dmg\`
-          - **Linux**: \`greenroom-launchpad-${{ needs.validate-tag.outputs.version }}-linux-x64.deb\`
+          - **Linux**: \`greenroom-launchpad-${{ needs.validate-tag.outputs.version }}-linux-amd64.deb\`
 
           ---
 
@@ -141,9 +137,11 @@ jobs:
           EOF
 
       - name: Create GitHub Release
+        # macOS auto-update downloads the .zip (referenced by latest-mac.yml), not the .dmg.
+        # .blockmap files enable delta updates and must be uploaded alongside the installers.
         run: |
           gh release create ${{ needs.validate-tag.outputs.tag }} \
-            dist/*.exe dist/*.dmg dist/*.deb dist/latest*.yml \
+            dist/*.exe dist/*.dmg dist/*.zip dist/*.deb dist/*.blockmap dist/latest*.yml \
             --repo ${{ github.repository }} \
             --title "Release ${{ needs.validate-tag.outputs.tag }}" \
             --notes-file release-notes.md \

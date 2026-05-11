@@ -10,14 +10,22 @@ export default /** @type import('electron-builder').Configuration */
     buildResources: 'buildResources',
   },
   generateUpdatesFilesForAllChannels: true,
+  publish: [
+    {
+      provider: 'github',
+      owner: 'greenroom-robotics',
+      repo: 'launchpad',
+    },
+  ],
   linux: {
     target: ['deb'],
   },
   /**
-   * It is recommended to avoid using non-standard characters such as spaces in artifact names,
-   * as they can unpredictably change during deployment, making them impossible to locate and download for update.
+   * Use ${name} (kebab-case package name) instead of ${productName} (which contains a space)
+   * so the filename written to disk matches the URL recorded in latest*.yml. GitHub Releases
+   * rewrites spaces in asset names to dots on upload, which would otherwise break electron-updater.
    */
-  artifactName: '${productName}-${version}-${os}-${arch}.${ext}',
+  artifactName: '${name}-${version}-${os}-${arch}.${ext}',
   files: [
     'LICENSE*',
     pkg.main,
