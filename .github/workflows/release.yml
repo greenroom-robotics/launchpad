@@ -27,7 +27,12 @@ jobs:
       version: ${{ steps.version.outputs.version }}
       tag: ${{ steps.version.outputs.tag }}
     steps:
-      - name: Determine tag
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Determine and validate tag
         id: version
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
@@ -48,31 +53,18 @@ jobs:
           echo "Release tag: $TAG"
           echo "Release version: $VERSION"
 
-  create-tag:
-    needs: validate-tag
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-        with:
-          fetch-depth: 0
-          token: ${{ github.token }}
-      - name: Create tag at current main
+      - name: Create tag if dispatched manually
+        if: github.event_name == 'workflow_dispatch'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git tag ${{ needs.validate-tag.outputs.tag }}
-          git push origin ${{ needs.validate-tag.outputs.tag }}
+          git tag ${{ steps.version.outputs.tag }}
+          git push origin ${{ steps.version.outputs.tag }}
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
   release:
-    needs: [validate-tag, create-tag]
-    # create-tag only runs on workflow_dispatch; for tag-push releases skip the dependency.
-    if: |
-      always() &&
-      needs.validate-tag.result == 'success' &&
-      (needs.create-tag.result == 'success' || needs.create-tag.result == 'skipped')
+    needs: validate-tag
     uses: ./.github/workflows/ci.yml
     secrets: inherit
     with:
