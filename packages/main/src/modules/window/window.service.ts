@@ -1,6 +1,6 @@
 import { singleton, inject } from 'tsyringe';
 import { TYPES } from '../../types.js';
-import { BrowserWindow, nativeTheme } from 'electron';
+import { BrowserWindow, nativeTheme, shell } from 'electron';
 import type { AppInitConfig } from '../../AppInitConfig.js';
 import { AuthService, UserCancelledAuthError } from '../auth/auth.service.js';
 import type { AuthCredentials, WindowMetadata } from '@app/shared';
@@ -61,6 +61,16 @@ export class WindowService {
     // Mark this as a Launchpad window
     this.#windowMetadata.set(browserWindow, {
       type: WINDOW_TYPES.LAUNCHPAD,
+    });
+
+    // Route external links (target="_blank", window.open) to the OS browser.
+    // Scoped to the launchpad window only — application windows keep their
+    // default behavior since they may legitimately want to open child windows.
+    browserWindow.webContents.setWindowOpenHandler(({ url }) => {
+      if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('mailto:')) {
+        void shell.openExternal(url);
+      }
+      return { action: 'deny' };
     });
 
     await browserWindow.loadURL(formatAppUrl(this.#renderer, {}));

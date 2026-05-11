@@ -2,6 +2,7 @@ import { Box, Text, CheckBox } from 'grommet';
 import { trpc } from '../trpc-react';
 import { CollapsiblePanel } from '@greenroom-robotics/alpha.ui/build/components';
 import { ThemeToggleControl } from '@greenroom-robotics/alpha.ui/build/theme/components/ThemeToggleControl';
+import { UpdatePanel } from '../components/UpdatePanel';
 
 export const GeneralSettingsPage = () => {
   // Auto-start management
@@ -17,9 +18,6 @@ export const GeneralSettingsPage = () => {
       refetchAutoStartStatus();
     },
   });
-
-  // Update management
-  const { data: updateInfo } = trpc.update.checkForUpdates.useQuery();
 
   // Check if we're in development mode (auto-start won't work)
   const isDevelopment = import.meta.env.DEV;
@@ -69,25 +67,7 @@ export const GeneralSettingsPage = () => {
       </CollapsiblePanel>
 
       <CollapsiblePanel label="Updates" defaultOpen>
-        <Text size="small" margin={{ bottom: 'small' }}>
-          Current Version: {updateInfo?.currentVersion || 'Unknown'}
-        </Text>
-
-        {updateInfo?.updateAvailable && 'latestVersion' in updateInfo && (
-          <Text size="small" color="status-ok" margin={{ bottom: 'small' }}>
-            Update available: {updateInfo.latestVersion}
-          </Text>
-        )}
-
-        {!updateInfo?.updateAvailable && updateInfo?.currentVersion && (
-          <Text size="small" color="text-weak" margin={{ bottom: 'small' }}>
-            You are running the latest version
-          </Text>
-        )}
-
-        <Text size="small" color="text-weak">
-          Automatic update management will be available in a future release
-        </Text>
+        <UpdatePanel />
       </CollapsiblePanel>
       <CollapsiblePanel label="Theme" defaultOpen>
         <Text size="small" margin={{ bottom: 'small' }}>
