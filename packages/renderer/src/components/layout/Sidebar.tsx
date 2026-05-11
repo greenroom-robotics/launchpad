@@ -3,6 +3,7 @@ import { Configure, AppsRounded } from 'grommet-icons';
 import { Link, useLocation } from 'react-router';
 import { BarButtons } from '@greenroom-robotics/alpha.ui/build/components/BarButtons';
 import { SidebarLogo } from '@greenroom-robotics/alpha.ui/build/components/SidebarLogo';
+import { opacity3 } from '@greenroom-robotics/alpha.ui/build/theme/colors';
 
 export const Sidebar = () => {
   const location = useLocation();
@@ -10,9 +11,9 @@ export const Sidebar = () => {
 
   return (
     <GrommetSidebar
-      background={'background-front'}
+        background={{ color: 'background', opacity: opacity3 }}
       color="background"
-      style={{ position: 'relative', width: '77px', borderRight: '1px solid background' }}
+      style={{ position: 'relative', width: '77px' }}
       flex={false}
     >
       <Box direction="column" align="center" flex>

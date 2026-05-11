@@ -1,6 +1,7 @@
 import { memo } from 'react';
-import { Link, Route, Routes, useLocation, Navigate } from 'react-router';
-import { Box, Button, Nav } from 'grommet';
+import { Route, Routes, useLocation, Navigate, useNavigate } from 'react-router';
+import { Box } from 'grommet';
+import { DetailedSidebar } from '@greenroom-robotics/alpha.ui/build/components/DetailedSidebar';
 import { Header } from '../components/layout/Header';
 import { AppSettingsPage } from './AppSettingsPage';
 import { AuthSettingsPage } from './AuthSettingsPage';
@@ -8,29 +9,34 @@ import { GeneralSettingsPage } from './GeneralSettingsPage';
 
 export const SettingsPage = memo(() => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <Box fill>
-      <Header title="Launchpad - Settings" border={{ side: 'bottom', size: '2px' }} />
+      <Header title="Launchpad - Settings" border={{ side: 'bottom', size: '1px' }} />
       <Box fill direction="row">
-        <Nav
-          border={{ side: 'right', size: '2px' }}
-          pad={{ top: 'small' }}
-          gap="none"
-          height={{ min: '100%' }}
+        <DetailedSidebar
+          items={[{
+            id: 'settings',
+            label: 'Settings',
+            items: [
+              { id: '/settings/apps', label: 'Applications' },
+              { id: '/settings/auth', label: 'Authentication' },
+              { id: '/settings/general', label: 'System' },
+            ],
+          }]}
           width="220px"
-          flex={false}
-        >
-          <Link to="/settings/apps">
-            <Button label="Apps" primary={location?.pathname === '/settings/apps'} />
-          </Link>
-          <Link to="/settings/auth">
-            <Button label="Authentication" primary={location?.pathname === '/settings/auth'} />
-          </Link>
-          <Link to="/settings/general">
-            <Button label="General" primary={location?.pathname === '/settings/general'} />
-          </Link>
-        </Nav>
+          border="right"
+          isItemActive={(itemId) => location.pathname === itemId}
+          onItemClick={(item) => {
+            if (item.startsWith('http')) {
+              window.open(item, '_blank', 'noopener,noreferrer');
+            } else {
+              navigate(item);
+            }
+          }}
+        />
+
         <Box fill overflow="auto">
           <Box pad="medium" flex={false}>
             <Routes>

@@ -145,7 +145,7 @@ export const AppSettingsPage = () => {
           {(discoveredApplications.data || []).map((discovered) => {
             const configured = isAlreadyConfigured(discovered);
             return (
-              <Box key={discovered.id} background="background-contrast" pad="small" border>
+              <Box key={discovered.id} background="background" pad="small" border>
                 <Box direction="row" justify="between" align="center">
                   <Box>
                     <Box direction="row" gap="small" align="center">
