@@ -1,6 +1,6 @@
 import { singleton, inject } from 'tsyringe';
 import { TYPES } from '../../types.js';
-import { BrowserWindow } from 'electron';
+import { BrowserWindow, nativeTheme } from 'electron';
 import type { AppInitConfig } from '../../AppInitConfig.js';
 import { AuthService, UserCancelledAuthError } from '../auth/auth.service.js';
 import type { AuthCredentials, WindowMetadata } from '@app/shared';
@@ -10,6 +10,8 @@ const WINDOW_TYPES = {
   LAUNCHPAD: 'launchpad',
   APPLICATION: 'application',
 } as const;
+
+const getInitialBackgroundColor = () => (nativeTheme.shouldUseDarkColors ? '#000000' : '#ffffff');
 
 @singleton()
 export class WindowService {
@@ -46,6 +48,7 @@ export class WindowService {
       height: 800,
       show: false, // Use the 'ready-to-show' event to show the instantiated BrowserWindow.
       title: 'Greenroom | Launchpad',
+      backgroundColor: getInitialBackgroundColor(),
       webPreferences: {
         nodeIntegration: false,
         contextIsolation: true,
@@ -171,12 +174,13 @@ export class WindowService {
       throw new Error(`Authentication failed: ${errorMessage}`);
     }
 
-    // Create the browser window
+    // Create the browser window.
     const browserWindow = new BrowserWindow({
       width: 1200,
       height: 800,
       title: applicationName,
-      show: false,
+      show: true,
+      backgroundColor: getInitialBackgroundColor(),
       webPreferences: {
         nodeIntegration: false,
         contextIsolation: true,
@@ -206,23 +210,15 @@ export class WindowService {
       this.#applicationWindows.delete(applicationName);
     });
 
-    // Set up ready-to-show handler before loading
-    browserWindow.once('ready-to-show', () => {
-      browserWindow.show();
-      if (this.#openDevTools) {
-        browserWindow.webContents.openDevTools();
-      }
-    });
+    if (this.#openDevTools) {
+      browserWindow.webContents.openDevTools();
+    }
 
     // Handle load errors
     browserWindow.webContents.on(
       'did-fail-load',
       (_event, errorCode, errorDescription, validatedURL) => {
         console.error(`Failed to load ${validatedURL}: ${errorDescription} (${errorCode})`);
-        // Show the window even on load failure so user can see the error
-        if (!browserWindow.isDestroyed()) {
-          browserWindow.show();
-        }
       }
     );
 
@@ -323,6 +319,7 @@ export class WindowService {
       height: 800,
       title: applicationName,
       show: true, // Show immediately so user can see loading progress
+      backgroundColor: getInitialBackgroundColor(),
       webPreferences: {
         nodeIntegration: false,
         contextIsolation: true,
