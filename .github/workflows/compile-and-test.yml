@@ -77,12 +77,12 @@ jobs:
           node-version: '24'
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
 
-      # On Node 24 electron's postinstall extracts dist/ but exits before writing
-      # path.txt, so index.js reports it as failed. Extract, then write path.txt.
+      # On Node 24 electron's postinstall exits mid-extract, leaving the binary
+      # and path.txt missing. Install it via a fully-awaited download+extract.
       - name: Install Electron binary
+        working-directory: node_modules/electron
         run: |
-          node node_modules/electron/install.js
-          node -e "const fs=require('fs'),f='node_modules/electron/path.txt';if(!fs.existsSync(f)){fs.writeFileSync(f,{linux:'electron',win32:'electron.exe',darwin:'Electron.app/Contents/MacOS/Electron'}[process.platform]);console.log('wrote '+f)}"
+          node -e "const {downloadArtifact}=require('@electron/get');const extract=require('extract-zip');const fs=require('fs'),path=require('path');const {version}=require('./package.json');(async()=>{const zip=await downloadArtifact({version,artifactName:'electron',platform:process.platform,arch:process.arch});await extract(zip,{dir:path.resolve('dist')});const bin={linux:'electron',win32:'electron.exe',darwin:'Electron.app/Contents/MacOS/Electron'}[process.platform];fs.writeFileSync('path.txt',bin);console.log('electron ready: '+bin)})().catch(e=>{console.error(e);process.exit(1)})"
 
       # - name: Cache build artifacts
       #   uses: actions/cache@v4
