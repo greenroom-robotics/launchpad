@@ -21,15 +21,24 @@ const dist = path.join(electronDir, 'dist');
 
 execFileSync('curl', ['-fL', '--retry', '3', '-o', zipPath, url], { stdio: 'inherit' });
 mkdirSync(dist, { recursive: true });
-// bsdtar (the `tar` on Windows runners) reads zips; unzip elsewhere.
 if (platform === 'win32') {
-  execFileSync('tar', ['-xf', zipPath, '-C', dist], { stdio: 'inherit' });
+  execFileSync(
+    'powershell',
+    [
+      '-NoProfile',
+      '-Command',
+      `Expand-Archive -LiteralPath '${zipPath}' -DestinationPath '${dist}' -Force`,
+    ],
+    { stdio: 'inherit' }
+  );
 } else {
   execFileSync('unzip', ['-q', '-o', zipPath, '-d', dist], { stdio: 'inherit' });
 }
 writeFileSync(
   path.join(electronDir, 'path.txt'),
-  { linux: 'electron', win32: 'electron.exe', darwin: 'Electron.app/Contents/MacOS/Electron' }[platform],
+  { linux: 'electron', win32: 'electron.exe', darwin: 'Electron.app/Contents/MacOS/Electron' }[
+    platform
+  ]
 );
 
 console.log(`electron ${version} ready`);
