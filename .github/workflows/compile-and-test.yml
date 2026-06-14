@@ -57,13 +57,6 @@ jobs:
           - ubuntu-latest
           - macos-latest
     runs-on: ${{ matrix.os }}
-    env:
-      # ELECTRON_SKIP_BINARY_DOWNLOAD is set org-wide and makes electron's
-      # postinstall a no-op, leaving the binary (and node_modules/electron/
-      # path.txt) missing — which breaks the Vite build and electron-builder.
-      # This job needs the real binary, so clear it here. (lint/typecheck don't
-      # need the binary, so the org-wide skip still applies to them.)
-      ELECTRON_SKIP_BINARY_DOWNLOAD: ''
     steps:
       - uses: actions/checkout@v6
 
@@ -84,10 +77,12 @@ jobs:
           node-version: '24'
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
 
-      # Guarantee the binary (and path.txt) exist even if npm's postinstall is
-      # skipped; no-ops quickly when already installed.
-      - name: Ensure Electron binary is installed
-        run: node node_modules/electron/install.js
+      # Force electron's binary install (org-wide ELECTRON_SKIP_BINARY_DOWNLOAD
+      # otherwise skips it, breaking the build).
+      - name: Install Electron binary
+        run: |
+          rm -rf node_modules/electron/dist node_modules/electron/path.txt
+          env -u ELECTRON_SKIP_BINARY_DOWNLOAD node node_modules/electron/install.js
 
       # - name: Cache build artifacts
       #   uses: actions/cache@v4
