@@ -65,6 +65,23 @@ jobs:
           node-version: '24'
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
 
+      - name: Cache Electron binary
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/electron-cache
+          key: electron-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            electron-${{ runner.os }}-
+
+      # `npm ci` does not reliably run electron's postinstall, which leaves the
+      # binary (and node_modules/electron/path.txt) missing and breaks both the
+      # Vite build and electron-builder. Run the installer explicitly so the
+      # binary is always present.
+      - name: Ensure Electron binary is installed
+        run: node node_modules/electron/install.js
+        env:
+          ELECTRON_CACHE: ${{ runner.temp }}/electron-cache
+
       # - name: Cache build artifacts
       #   uses: actions/cache@v4
       #   with:
