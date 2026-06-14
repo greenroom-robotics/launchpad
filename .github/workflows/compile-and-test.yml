@@ -80,14 +80,14 @@ jobs:
       - name: Install Electron binary
         run: |
           set +e
-          echo "node=$(node -v) npm=$(npm -v)"
-          echo "ignore-scripts=$(npm config get ignore-scripts)"
-          echo "SKIP=[${ELECTRON_SKIP_BINARY_DOWNLOAD-<unset>}]"
+          echo "=== before (as left by npm ci) ==="
+          ls -la node_modules/electron/ | head -30
+          echo "pre path.txt: $(cat node_modules/electron/path.txt 2>/dev/null || echo MISSING)"
           rm -rf node_modules/electron/dist node_modules/electron/path.txt
-          echo "--- install.js ---"
-          env -u ELECTRON_SKIP_BINARY_DOWNLOAD node node_modules/electron/install.js
+          echo "=== install.js (DEBUG) ==="
+          DEBUG='@electron/get:*' env -u ELECTRON_SKIP_BINARY_DOWNLOAD node node_modules/electron/install.js 2>&1
           echo "install rc=$?"
-          cat node_modules/electron/path.txt && echo " <- path.txt ok" || echo "NO path.txt"
+          echo "post path.txt: $(cat node_modules/electron/path.txt 2>/dev/null || echo MISSING)"
 
       # - name: Cache build artifacts
       #   uses: actions/cache@v4
