@@ -59,6 +59,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v6
+
       - uses: ./.github/actions/setup-app
         name: Setup application
         with:

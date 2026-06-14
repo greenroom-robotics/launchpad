@@ -1,4 +1,5 @@
 import 'reflect-metadata';
+import { session } from 'electron';
 import { container } from 'tsyringe';
 import type { AppInitConfig } from './AppInitConfig.js';
 import { setupDI } from './di.js';
@@ -41,6 +42,14 @@ export async function initApp(initConfig: AppInitConfig) {
     event.preventDefault();
     // Accept the certificate regardless of errors
     callback(true);
+  });
+
+  // Treat self-signed certs as valid (0) so the origin is a secure context —
+  // required for service workers to register (offline PWA support).
+  app.whenReady().then(() => {
+    session.defaultSession.setCertificateVerifyProc((_request, callback) => {
+      callback(0);
+    });
   });
 
   // Services auto-initialize when resolved from container (constructor-based initialization)

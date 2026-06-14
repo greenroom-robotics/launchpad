@@ -53,11 +53,11 @@ export const ApplicationTile = ({
   const { loading, value } = connectivityState;
   const connected = value?.connected ?? false;
 
-  const isClickable = connected && onClick;
+  const isClickable = onClick;
 
   // Handle click with loading state
   const handleClick = async () => {
-    if (!onClick || !connected) return;
+    if (!onClick) return;
 
     setIsClickLoading(true);
     try {
