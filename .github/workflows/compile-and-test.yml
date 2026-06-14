@@ -66,10 +66,6 @@ jobs:
           node-version: '24'
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
 
-      # electron's own postinstall is unreliable on Node 24 (see script).
-      - name: Install Electron binary
-        run: node scripts/ci-install-electron.mjs
-
       # - name: Cache build artifacts
       #   uses: actions/cache@v4
       #   with:
