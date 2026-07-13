@@ -30,5 +30,9 @@ export function useConfig() {
       onSuccess: invalidateDiscovery,
     }),
     launchApp: trpc.apps.launchApp.useMutation(),
+    exportApplications: trpc.config.exportApplications.useMutation(),
+    importApplications: trpc.config.importApplications.useMutation({
+      onSuccess: invalidateConfig,
+    }),
   };
 }

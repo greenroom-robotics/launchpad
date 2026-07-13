@@ -111,4 +111,16 @@ export const configRouter = router({
     .query(async ({ ctx }) => {
       return ctx.service.batchConnectivityCheck();
     }),
+
+  exportApplications: publicProcedure
+    .use(injectService<ConfigService>(ConfigService))
+    .mutation(({ ctx }) => {
+      return ctx.service.exportApplications();
+    }),
+
+  importApplications: publicProcedure
+    .use(injectService<ConfigService>(ConfigService))
+    .mutation(({ ctx }) => {
+      return ctx.service.importApplications();
+    }),
 });
