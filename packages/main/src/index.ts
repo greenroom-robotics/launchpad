@@ -36,6 +36,10 @@ export async function initApp(initConfig: AppInitConfig) {
   // Get the Electron app instance
   const app = container.resolve<Electron.App>('ElectronApp');
 
+  // Allow media autoplay without a prior user gesture (equivalent to
+  // launching Chromium with --autoplay-policy=no-user-gesture-required)
+  app.commandLine.appendSwitch('autoplay-policy', 'no-user-gesture-required');
+
   // Ignore SSL certificate errors for offline environment applications
   app.on('certificate-error', (event, _webContents, _url, _error, _certificate, callback) => {
     // Prevent the default behavior
