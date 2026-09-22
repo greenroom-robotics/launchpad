@@ -31,7 +31,7 @@ export class TrayService {
     }
 
     this.#tray = new Tray(icon);
-    this.#tray.setToolTip('Greenroom Launchpad');
+    this.#tray.setToolTip(`Greenroom Launchpad v${this.app.getVersion()}`);
 
     // Set up context menu
     const contextMenu = Menu.buildFromTemplate([

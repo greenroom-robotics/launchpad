@@ -35,11 +35,13 @@ Intel Mac builds are not currently produced.
 
 ## Auto-Updates
 
-Release builds check for updates on launch. When one is downloaded, the user gets an OS notification and an in-app prompt to restart.
+Update checks are opt-in and off by default. Release builds show the installed version in Settings → Updates regardless of network state, and a "Check for updates" button runs a check on demand. Users can enable "Check for updates automatically at startup" in the same panel; the preference is stored per user in `launchpad-update.json` and is not affected by "Reset to default".
 
-Linux `.deb` clients are notified but must install new releases manually — electron-updater cannot self-install deb packages.
+Nothing is downloaded or installed without an explicit click: a found update shows a "Download update" button, and a downloaded update shows "Restart and install" plus an OS notification. Updates are never applied silently on quit.
 
-Clients on v0.0.7 or earlier cannot auto-update due to a filename mismatch in their installed `latest*.yml`; those users must manually install v0.0.8 once, after which updates flow normally.
+Linux `.deb` clients update in-app too. electron-updater installs the package with `pkexec dpkg -i`, so the system asks for an administrator password when the user clicks "Restart and install". This needs a graphical polkit agent; on headless or kiosk installs without one, install the `.deb` manually from the releases page.
+
+Clients on v0.0.7 or earlier cannot auto-update due to a filename mismatch in their installed `latest*.yml`; those users must manually install a newer release once. Clients on v0.0.8 through v0.0.10 still check and download on launch, so they will auto-update one final time to pick up the opt-in behaviour, after which checks stop unless enabled.
 
 ## Version Numbering
 

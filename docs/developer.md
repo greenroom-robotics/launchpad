@@ -62,7 +62,7 @@ Launchpad uses [electron-builder] to create distributable applications:
 - **Production builds**: Automated via GitHub Actions for official releases
 - **Debug builds**: `npm run compile -- --dir -c.asar=false` - Unpackaged for debugging
 
-Built applications support auto-updates when distributed through official channels.
+Built applications can check for and install updates when distributed through official channels. Checks are opt-in and off by default; see [RELEASE.md](RELEASE.md).
 
 ### Creating Releases
 
