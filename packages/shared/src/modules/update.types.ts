@@ -4,20 +4,27 @@ export const UpdateInfoSchema = z.object({
   version: z.string(),
 });
 
+// Fields present on every state. lastCheckedAt is the epoch-ms time of the
+// most recent completed check attempt, or null if none has run this session.
+const common = {
+  currentVersion: z.string(),
+  lastCheckedAt: z.number().nullable(),
+};
+
 export const UpdateStateSchema = z.discriminatedUnion('kind', [
-  z.object({ kind: z.literal('idle'), currentVersion: z.string() }),
-  z.object({ kind: z.literal('checking'), currentVersion: z.string() }),
-  z.object({ kind: z.literal('not-available'), currentVersion: z.string() }),
-  z.object({ kind: z.literal('available'), currentVersion: z.string(), info: UpdateInfoSchema }),
+  z.object({ kind: z.literal('idle'), ...common }),
+  z.object({ kind: z.literal('checking'), ...common }),
+  z.object({ kind: z.literal('not-available'), ...common }),
+  z.object({ kind: z.literal('available'), ...common, info: UpdateInfoSchema }),
   z.object({
     kind: z.literal('downloading'),
-    currentVersion: z.string(),
+    ...common,
     info: UpdateInfoSchema,
     percent: z.number(),
   }),
-  z.object({ kind: z.literal('downloaded'), currentVersion: z.string(), info: UpdateInfoSchema }),
-  z.object({ kind: z.literal('error'), currentVersion: z.string(), message: z.string() }),
-  z.object({ kind: z.literal('unsupported'), currentVersion: z.string(), reason: z.string() }),
+  z.object({ kind: z.literal('downloaded'), ...common, info: UpdateInfoSchema }),
+  z.object({ kind: z.literal('error'), ...common, message: z.string() }),
+  z.object({ kind: z.literal('unsupported'), ...common, reason: z.string() }),
 ]);
 
 export const UpdatePreferencesSchema = z.object({

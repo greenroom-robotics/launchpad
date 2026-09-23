@@ -24,6 +24,12 @@ const OFFLINE_MESSAGE = 'No internet connection. Connect to a network and try ag
 const UNREACHABLE_MESSAGE =
   'Could not reach the update server. Check your network connection and try again.';
 const SERVER_ERROR_MESSAGE = 'The update server returned an error. Try again later.';
+const METADATA_MISSING_MESSAGE =
+  'The latest release is missing its update metadata, so it cannot be installed from here. Download it from the releases page.';
+const CHECKSUM_MESSAGE = 'The downloaded update was corrupted. Download it again.';
+const INSTALL_CANCELLED_MESSAGE = 'Installation was cancelled before it started.';
+const UNSIGNED_MESSAGE =
+  'This update cannot be installed because the build is not code-signed. Download the installer from the releases page.';
 const GENERIC_ERROR_MESSAGE = 'The update failed. See the application log for details.';
 
 // Destructure to work around the CJS/ESM interop quirk in electron-updater.
@@ -42,6 +48,7 @@ export class UpdateService {
   readonly #updater: AppUpdater;
   readonly #currentVersion: string = app.getVersion();
   #state: InternalState;
+  #lastCheckedAt: number | null = null;
   #downloadToken: CancellationToken | null = null;
 
   constructor(@inject(UpdateStore) private readonly store: UpdateStore) {
@@ -75,7 +82,11 @@ export class UpdateService {
   }
 
   getState(): UpdateState {
-    return { ...this.#state, currentVersion: this.#currentVersion };
+    return {
+      ...this.#state,
+      currentVersion: this.#currentVersion,
+      lastCheckedAt: this.#lastCheckedAt,
+    };
   }
 
   getAutoCheck(): boolean {
@@ -160,14 +171,20 @@ export class UpdateService {
       // electron-updater resolves null without emitting any event when the
       // platform-specific updater declines to run (e.g. a Linux build that is
       // neither an AppImage nor a deb/rpm install). Don't leave the UI spinning.
-      if (result === null && this.#state.kind === 'checking') {
-        this.#setState({
-          kind: 'unsupported',
-          reason: 'Update checks are not supported for this installation type.',
-        });
+      if (result === null) {
+        if (this.#is('checking')) {
+          this.#setState({
+            kind: 'unsupported',
+            reason: 'Update checks are not supported for this installation type.',
+          });
+        }
+        return;
       }
+      this.#lastCheckedAt = Date.now();
     } catch {
-      // electron-updater also emits an 'error' event; the listener owns the transition.
+      // electron-updater also emits an 'error' event; the listener owns the
+      // transition. A failed attempt still counts as a check for the UI.
+      this.#lastCheckedAt = Date.now();
     }
   }
 
@@ -218,16 +235,33 @@ function mapInfo(info: { version: string }): UpdateInfo {
   return { version: info.version };
 }
 
-// electron-updater surfaces Chromium and Node network errors verbatim
-// (e.g. "net::ERR_PROXY_CONNECTION_FAILED"). The raw message goes to the log;
-// the UI gets something a user can act on.
+// electron-updater tags its own failures with a code and surfaces Chromium,
+// Node and installer errors verbatim in the message. Classify by code first,
+// then by message. The raw error is logged by the caller.
 function describeError(error: unknown): string {
+  const code =
+    typeof error === 'object' && error !== null ? (error as { code?: unknown }).code : undefined;
   const message = error instanceof Error ? error.message : String(error);
+
+  switch (code) {
+    case 'ERR_UPDATER_CHANNEL_FILE_NOT_FOUND':
+    case 'ERR_UPDATER_LATEST_VERSION_NOT_FOUND':
+      return METADATA_MISSING_MESSAGE;
+    case 'ERR_CHECKSUM_MISMATCH':
+      return CHECKSUM_MESSAGE;
+  }
+
+  if (/net::ERR_INTERNET_DISCONNECTED/i.test(message)) return OFFLINE_MESSAGE;
   if (
     /net::ERR_|ENOTFOUND|ECONNREFUSED|ECONNRESET|ETIMEDOUT|EAI_AGAIN|socket hang up/i.test(message)
   ) {
     return UNREACHABLE_MESSAGE;
   }
+  // Squirrel.Mac rejects payloads whose signature does not match the running app.
+  if (/code signature|not signed|signature .*(invalid|did not pass)/i.test(message))
+    return UNSIGNED_MESSAGE;
+  // pkexec/gksudo exit 126 when the user dismisses the prompt, 127 on auth failure.
+  if (/exited with code 12[67]\b/.test(message)) return INSTALL_CANCELLED_MESSAGE;
   if ((error instanceof Error && 'statusCode' in error) || /HttpError|status code/i.test(message)) {
     return SERVER_ERROR_MESSAGE;
   }

@@ -16,6 +16,9 @@ export class UpdateStore {
     this.store = new Store<UpdatePreferences>({
       name: 'launchpad-update',
       defaults: defaultPreferences,
+      // A malformed or schema-violating file would otherwise throw here and
+      // abort app initialisation. The contents are trivially recreatable.
+      clearInvalidConfig: true,
       schema: {
         autoCheck: { type: 'boolean' },
       },

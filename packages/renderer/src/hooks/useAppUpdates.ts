@@ -10,7 +10,12 @@ export function useAppUpdates() {
   });
   const autoCheckQuery = trpc.update.getAutoCheck.useQuery();
 
-  const setAutoCheck = trpc.update.setAutoCheck.useMutation({ onSuccess: invalidateAutoCheck });
+  const setAutoCheck = trpc.update.setAutoCheck.useMutation({
+    onSuccess: () => {
+      invalidateAutoCheck();
+      invalidateState();
+    },
+  });
   const checkNow = trpc.update.checkNow.useMutation({ onSuccess: invalidateState });
   const downloadNow = trpc.update.downloadNow.useMutation({ onSuccess: invalidateState });
   const cancelDownload = trpc.update.cancelDownload.useMutation({ onSuccess: invalidateState });

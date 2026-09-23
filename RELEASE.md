@@ -37,11 +37,11 @@ Intel Mac builds are not currently produced.
 
 Update checks are opt-in and off by default. Release builds show the installed version in Settings → Updates regardless of network state, and a "Check for updates" button runs a check on demand. Users can enable "Check for updates automatically at startup" in the same panel; the preference is stored per user in `launchpad-update.json` and is not affected by "Reset to default".
 
-Nothing is downloaded or installed without an explicit click: a found update shows a "Download update" button, and a downloaded update shows "Restart and install" plus an OS notification. Updates are never applied silently on quit.
+Nothing is downloaded or installed without an explicit click: a found update shows a "Download update" button, and a downloaded update shows "Restart and install" plus an OS notification. Updates are never applied silently on quit. A downloaded update that is not installed stays cached, so on the next check "Download update" completes instantly.
 
-Linux `.deb` clients update in-app too. electron-updater installs the package with `pkexec dpkg -i`, so the system asks for an administrator password when the user clicks "Restart and install". This needs a graphical polkit agent; on headless or kiosk installs without one, install the `.deb` manually from the releases page.
+Linux `.deb` clients update in-app too. electron-updater installs the package with `dpkg -i` through a graphical sudo helper (gksudo, kdesudo or pkexec, whichever is found first), so the system asks for an administrator password when the user clicks "Restart and install". The app is unresponsive while that prompt and the install run. Dismissing the prompt is reported as "Installation was cancelled". This needs a graphical polkit agent; on headless or kiosk installs without one, install the `.deb` manually from the releases page.
 
-Clients on v0.0.7 or earlier cannot auto-update due to a filename mismatch in their installed `latest*.yml`; those users must manually install a newer release once. Clients on v0.0.8 through v0.0.10 still check and download on launch, so they will auto-update one final time to pick up the opt-in behaviour, after which checks stop unless enabled.
+Clients on v0.0.7 or earlier cannot auto-update due to a filename mismatch in their installed `latest*.yml`; those users must manually install a newer release once. Clients on v0.0.8 through v0.0.10 still check and download on launch with the old defaults, so the transition differs by platform: Windows installs the next release silently on quit; Linux downloads it and then prompts for an administrator password at every app exit until it is installed; macOS fails because the builds are unsigned, and those users must install manually.
 
 ## Version Numbering
 

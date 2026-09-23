@@ -31,6 +31,11 @@ export const UpdatePanel = () => {
   return (
     <Box gap="small" align="start">
       <Text size="small">Current version: {state.currentVersion}</Text>
+      {showLastChecked(state) && (
+        <Text size="small" color="text-weak">
+          Last checked {formatLastChecked(state.lastCheckedAt)}
+        </Text>
+      )}
       <UpdateStatus
         state={state}
         isLinux={isLinux}
@@ -146,6 +151,20 @@ const UpdateStatus = ({
       return null;
     }
   }
+};
+
+// A completed check often looks identical to the state before it (e.g. still on
+// the latest version), so this line is the only visible evidence it ran.
+const showLastChecked = (state: UpdateState): state is UpdateState & { lastCheckedAt: number } =>
+  state.lastCheckedAt !== null && state.kind !== 'checking' && state.kind !== 'downloading';
+
+const formatLastChecked = (timestamp: number): string => {
+  const seconds = Math.round((Date.now() - timestamp) / 1000);
+  if (seconds < 10) return 'just now';
+  if (seconds < 60) return `${seconds} seconds ago`;
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 60) return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+  return `at ${new Date(timestamp).toLocaleTimeString()}`;
 };
 
 const ReleaseNotesLink = ({ version }: { version: string }) => (
