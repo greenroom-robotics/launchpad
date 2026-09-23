@@ -24,7 +24,7 @@ export function useAppUpdates() {
   return {
     state: stateQuery.data,
     autoCheck: autoCheckQuery.data,
-    setAutoCheck: (enabled: boolean) => setAutoCheck.mutate(enabled),
+    setAutoCheck: (enabled: boolean) => setAutoCheck.mutate({ enabled }),
     checkNow: () => checkNow.mutate(),
     downloadNow: () => downloadNow.mutate(),
     cancelDownload: () => cancelDownload.mutate(),

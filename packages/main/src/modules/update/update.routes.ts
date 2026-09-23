@@ -11,11 +11,14 @@ export const updateRouter = router({
     .use(injectService<UpdateService>(UpdateService))
     .query(({ ctx }) => ctx.service.getAutoCheck()),
 
+  // Object input on purpose: electron-trpc-experimental 1.0.0-alpha.1 drops a
+  // bare falsy input (false, 0, '') to undefined before validation, so a plain
+  // z.boolean() could never be set to false.
   setAutoCheck: publicProcedure
-    .input(z.boolean())
+    .input(z.object({ enabled: z.boolean() }))
     .use(injectService<UpdateService>(UpdateService))
     .mutation(({ ctx, input }) => {
-      ctx.service.setAutoCheck(input);
+      ctx.service.setAutoCheck(input.enabled);
     }),
 
   checkNow: publicProcedure.use(injectService<UpdateService>(UpdateService)).mutation(({ ctx }) => {
