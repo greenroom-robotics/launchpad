@@ -7,6 +7,12 @@ import { TYPES } from '../../types.js';
 import { BrowserWindow } from 'electron';
 import { formatAppUrl } from '../../utils.js';
 
+// TODO: Remove the Basic auth path once every product has moved to gangway.
+// Gangway signs users in inside the app window itself, so none of this is
+// needed for it. The path covers: this service, AuthStore, authRouter,
+// SecureHttpClient.testBasicAuth, WindowService.setupBasicAuthWithCredentials,
+// the login/auth-settings pages in the renderer, and the auth types in shared.
+
 /**
  * Error thrown when user explicitly cancels authentication
  * This is a normal user flow, not a system error
