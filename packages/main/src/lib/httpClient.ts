@@ -12,6 +12,15 @@ function isAxiosError(error: unknown): error is AxiosError {
   return (error && typeof error === 'object' && 'response' in error) as boolean;
 }
 
+/**
+ * Whether a WWW-Authenticate header offers the Basic scheme.
+ * The header may carry several challenges, comma-separated or repeated.
+ */
+function hasBasicChallenge(header: unknown): boolean {
+  const values = Array.isArray(header) ? header : [header];
+  return values.some((value) => typeof value === 'string' && /(^|,)\s*basic\b/i.test(value));
+}
+
 export class SecureHttpClient {
   private instance: AxiosInstance;
 
@@ -35,13 +44,16 @@ export class SecureHttpClient {
    * @param url - The URL to test against
    * @param username - Username for Basic Auth
    * @param password - Password for Basic Auth
-   * @returns Object with success status and HTTP status code
+   * @returns Object with success status, HTTP status code, and whether the
+   *   server answered with a Basic auth challenge (`WWW-Authenticate: Basic`).
+   *   A 401 without that challenge comes from something else, such as a
+   *   cookie-based login service, and cannot be satisfied with Basic credentials.
    */
   async testBasicAuth(
     url: string,
     username: string,
     password: string
-  ): Promise<{ success: boolean; status: number }> {
+  ): Promise<{ success: boolean; status: number; basicChallenge: boolean }> {
     try {
       const response = await this.instance.get(url, {
         auth: { username, password },
@@ -51,6 +63,7 @@ export class SecureHttpClient {
       return {
         success: response.status >= 200 && response.status < 400,
         status: response.status,
+        basicChallenge: hasBasicChallenge(response.headers['www-authenticate']),
       };
     } catch (error: unknown) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
@@ -59,6 +72,7 @@ export class SecureHttpClient {
       return {
         success: false,
         status: isAxiosError(error) ? error.response?.status || 0 : 0,
+        basicChallenge: false,
       };
     }
   }
