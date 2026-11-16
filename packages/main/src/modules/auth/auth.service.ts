@@ -70,12 +70,21 @@ export class AuthService {
       }
     }
 
-    // Test if auth is actually required by making a request
+    // Test if Basic auth is actually required by making a request. Only a 401
+    // that carries a Basic challenge needs our login window; a 401 from a
+    // cookie-based login service (gangway) is handled by the app itself, which
+    // redirects the window to its own sign-in page.
     try {
       const testResult = await this.httpClient.testBasicAuth(url, '', '');
       if (testResult.success || testResult.status !== 401) {
         console.log(`[AuthService] No authentication required for ${host}`);
         return null; // No auth required
+      }
+      if (!testResult.basicChallenge) {
+        console.log(
+          `[AuthService] ${host} requires sign-in but not Basic auth, leaving it to the app`
+        );
+        return null;
       }
     } catch {
       console.log(
@@ -83,7 +92,7 @@ export class AuthService {
       );
     }
 
-    console.log(`[AuthService] Authentication required for ${host}`);
+    console.log(`[AuthService] Basic authentication required for ${host}`);
 
     // Check if we already have a login window open for this URL
     const existingPromise = this.activeLoginWindows.get(url);
