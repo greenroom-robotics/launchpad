@@ -68,7 +68,14 @@ const applicationConfigSchema: ExtendedRJSFSchema = {
 };
 
 export const AppSettingsPage = () => {
-  const { applications, discoveredApplications, updateApplications, updateConfig } = useConfig();
+  const {
+    applications,
+    discoveredApplications,
+    updateApplications,
+    updateConfig,
+    exportApplications,
+    importApplications,
+  } = useConfig();
 
   // Use useAsyncFn for form submission with built-in loading/error states
   const [submitState, handleSubmit] = useAsyncFn(
@@ -78,6 +85,14 @@ export const AppSettingsPage = () => {
     },
     [updateConfig]
   );
+
+  const [exportState, handleExport] = useAsyncFn(async () => {
+    return exportApplications.mutateAsync();
+  }, [exportApplications]);
+
+  const [importState, handleImport] = useAsyncFn(async () => {
+    return importApplications.mutateAsync();
+  }, [importApplications]);
 
   // Add a discovered service to the configured applications
   const handleAddDiscovered = async (discovered: ApplicationInstance) => {
@@ -187,11 +202,56 @@ export const AppSettingsPage = () => {
         </Box>
       )}
 
-      <Heading margin={{ top: 'medium', bottom: 'small' }} level={4}>
-        App Configuration Details
-      </Heading>
+      <Box direction="row" justify="between" align="center" margin={{ top: 'medium' }}>
+        <Heading margin={{ bottom: 'small' }} level={4}>
+          App Configuration Details
+        </Heading>
+        <Box direction="row" gap="small">
+          <Button
+            label="Import…"
+            onClick={handleImport}
+            disabled={isSaving || exportState.loading || importState.loading}
+          />
+          <Button
+            label="Export…"
+            onClick={handleExport}
+            disabled={isSaving || exportState.loading || importState.loading}
+          />
+        </Box>
+      </Box>
       <Text>Manually specify the Greenroom app type and host.</Text>
       <br />
+
+      {exportState.value?.status === 'success' && !exportState.loading && (
+        <Box pad="small" background="green" margin={{ bottom: 'small' }}>
+          <Text>Exported to {exportState.value.path}</Text>
+        </Box>
+      )}
+      {exportState.error && (
+        <Box pad="small" background="status-error" margin={{ bottom: 'small' }}>
+          <Text>Error exporting: {exportState.error.message}</Text>
+        </Box>
+      )}
+
+      {importState.value?.status === 'success' && !importState.loading && (
+        <Box pad="small" background="green" margin={{ bottom: 'small' }}>
+          <Text>Imported {importState.value.applications.length} application(s) successfully!</Text>
+        </Box>
+      )}
+      {importState.value?.status === 'error' && !importState.loading && (
+        <Box pad="small" background="status-error" margin={{ bottom: 'small' }}>
+          <Text weight="bold">Import failed:</Text>
+          {importState.value.errors.map((error, index) => (
+            <Text key={index}>• {error}</Text>
+          ))}
+        </Box>
+      )}
+      {importState.error && (
+        <Box pad="small" background="status-error" margin={{ bottom: 'small' }}>
+          <Text>Error importing: {importState.error.message}</Text>
+        </Box>
+      )}
+
       {/* Show save status */}
       {isSaving && (
         <Box pad="small" background="status-unknown" margin={{ bottom: 'small' }}>

@@ -68,7 +68,21 @@ export const ResetToDefaultResponseSchema = z.object({
   applications: z.array(ApplicationInstanceSchema),
 });
 
+// Import/export schemas
+export const ImportApplicationsResultSchema = z.discriminatedUnion('status', [
+  z.object({ status: z.literal('success'), applications: z.array(ApplicationInstanceSchema) }),
+  z.object({ status: z.literal('cancelled') }),
+  z.object({ status: z.literal('error'), errors: z.array(z.string()) }),
+]);
+
+export const ExportApplicationsResultSchema = z.discriminatedUnion('status', [
+  z.object({ status: z.literal('success'), path: z.string() }),
+  z.object({ status: z.literal('cancelled') }),
+]);
+
 // Type exports
 export type ConnectivityCheckRequest = z.infer<typeof ConnectivityCheckRequestSchema>;
 export type ConnectivityCheckResponse = z.infer<typeof ConnectivityCheckResponseSchema>;
 export type ResetToDefaultResponse = z.infer<typeof ResetToDefaultResponseSchema>;
+export type ImportApplicationsResult = z.infer<typeof ImportApplicationsResultSchema>;
+export type ExportApplicationsResult = z.infer<typeof ExportApplicationsResultSchema>;
