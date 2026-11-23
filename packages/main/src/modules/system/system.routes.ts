@@ -56,10 +56,10 @@ export const systemRouter = router({
     }),
 
   preventSystemSleep: publicProcedure
-    .input(z.boolean().default(true))
+    .input(z.object({ enabled: z.boolean().default(true) }))
     .use(injectService<BackgroundService>(BackgroundService))
     .mutation(({ ctx, input }) => {
-      const blockerId = ctx.service.preventSystemSleep(input);
+      const blockerId = ctx.service.preventSystemSleep(input.enabled);
       return { success: true, blockerId };
     }),
 

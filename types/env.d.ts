@@ -18,6 +18,12 @@ interface ImportMetaEnv {
 
   /** Current app version */
   readonly VITE_APP_VERSION: string;
+
+  /**
+   * Build channel set by CI ('release' or 'dev'). Undefined for local builds.
+   * The auto-updater is active only when this is unset or 'release'.
+   */
+  readonly VITE_DISTRIBUTION_CHANNEL: string | undefined;
 }
 
 interface ImportMeta {
