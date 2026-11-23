@@ -4,6 +4,7 @@
   "description": "Unified launcher for Greenroom Robotics desktop applications",
   "version": "0.0.8",
   "private": true,
+  "license": "UNLICENSED",
   "type": "module",
   "author": {
     "email": "software-team@greenroomrobotics.com",
