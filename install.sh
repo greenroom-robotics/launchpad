@@ -50,6 +50,8 @@ case "$OS" in
 esac
 
 TMP="$(mktemp -d)"
+# apt's sandbox user (_apt) must be able to read the downloaded .deb.
+chmod 755 "$TMP"
 MNT=""
 cleanup() {
   [ -n "$MNT" ] && hdiutil detach "$MNT" -quiet >/dev/null 2>&1 || true
