@@ -1,0 +1,4727 @@
+{
+  "chromium": "148.0.7778.254",
+  "platforms": {
+    "linux": [
+      {
+        "name": "PowerA Wireless Controller - Nintendo GameCube style",
+        "vendor_id": "0000",
+        "product_id": "ff00",
+        "vendor": "",
+        "product": "",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DragonRise Generic USB",
+        "vendor_id": "0079",
+        "product_id": "0006",
+        "vendor": "DragonRise Inc.",
+        "product": "PC TWIN SHOCK Gamepad",
+        "mapper": "MapperDragonRiseGeneric",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SteelSeries Stratus XL Bluetooth",
+        "vendor_id": "0111",
+        "product_id": "1419",
+        "vendor": "Steelseries ApS (Bluetooth)",
+        "product": "",
+        "mapper": "MapperSteelSeriesStratusBt",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SteelSeries Stratus Duo Bluetooth",
+        "vendor_id": "0111",
+        "product_id": "1431",
+        "vendor": "Steelseries ApS (Bluetooth)",
+        "product": "",
+        "mapper": "MapperSteelSeriesStratusBt",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SteelSeries Stratus+ Bluetooth",
+        "vendor_id": "0111",
+        "product_id": "1434",
+        "vendor": "Steelseries ApS (Bluetooth)",
+        "product": "",
+        "mapper": "MapperSteelSeriesStratusPlusBt",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox360 Controller",
+        "vendor_id": "045e",
+        "product_id": "028e",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox 360 Wireless Receiver for Windows",
+        "vendor_id": "045e",
+        "product_id": "0291",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox 360 Wireless Receiver for Windows",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox360 Big Button IR",
+        "vendor_id": "045e",
+        "product_id": "02a0",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Big Button IR",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "045e:02a1",
+        "vendor_id": "045e",
+        "product_id": "02a1",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One Controller",
+        "vendor_id": "045e",
+        "product_id": "02d1",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One Controller (Firmware 2015)",
+        "vendor_id": "045e",
+        "product_id": "02dd",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller (Firmware 2015)",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "02e0",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Wireless Controller",
+        "mapper": "MapperXboxOneS",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Elite Controller",
+        "vendor_id": "045e",
+        "product_id": "02e3",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Elite Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox Wireless Adapter for Windows",
+        "vendor_id": "045e",
+        "product_id": "02e6",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Wireless Adapter for Windows",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One Controller",
+        "vendor_id": "045e",
+        "product_id": "02ea",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "02fd",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One S Controller [Bluetooth]",
+        "mapper": "MapperXboxOneS2016Firmware",
+        "source": "mapping-table"
+      },
+      {
+        "name": "045e:02ff",
+        "vendor_id": "045e",
+        "product_id": "02ff",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox 360 Wireless Adapter",
+        "vendor_id": "045e",
+        "product_id": "0719",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox 360 Wireless Adapter",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox Elite Series 2 Controller (model 1797)",
+        "vendor_id": "045e",
+        "product_id": "0b00",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Elite Series 2 Controller (model 1797)",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One Elite 2 (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b05",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxElite2Bluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "045e:0b06",
+        "vendor_id": "045e",
+        "product_id": "0b06",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "045e:0b0a",
+        "vendor_id": "045e",
+        "product_id": "0b0a",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "045e",
+        "product_id": "0b12",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox Series X (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b13",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxSeriesXBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b20",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Adaptive (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b21",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Elite Series 2 (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b22",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F310 D-mode",
+        "vendor_id": "046d",
+        "product_id": "c216",
+        "vendor": "Logitech, Inc.",
+        "product": "F310 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F510 D-mode",
+        "vendor_id": "046d",
+        "product_id": "c218",
+        "vendor": "Logitech, Inc.",
+        "product": "F510 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F710 D-mode",
+        "vendor_id": "046d",
+        "product_id": "c219",
+        "vendor": "Logitech, Inc.",
+        "product": "F710 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "F310 Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21d",
+        "vendor": "Logitech, Inc.",
+        "product": "F310 Gamepad [XInput Mode]",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "F510 Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21e",
+        "vendor": "Logitech, Inc.",
+        "product": "F510 Gamepad [XInput Mode]",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "F710 Wireless Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21f",
+        "vendor": "Logitech, Inc.",
+        "product": "F710 Wireless Gamepad [XInput Mode]",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "046d:c242",
+        "vendor_id": "046d",
+        "product_id": "c242",
+        "vendor": "Logitech, Inc.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "DriveFX Racing Wheel",
+        "vendor_id": "046d",
+        "product_id": "caa3",
+        "vendor": "Logitech, Inc.",
+        "product": "DriveFX Racing Wheel",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Samsung Gamepad EI-GP20",
+        "vendor_id": "04e8",
+        "product_id": "a000",
+        "vendor": "Samsung Electronics Co., Ltd",
+        "product": "",
+        "mapper": "MapperSamsung_EI_GP20",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Acer GC501 X-INPUT mode",
+        "vendor_id": "0502",
+        "product_id": "1304",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "MapperAcer",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Acer Gaming Controller Nitro X-INPUT mode",
+        "vendor_id": "0502",
+        "product_id": "1305",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "MapperAcer",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Acer GC501 APP mode",
+        "vendor_id": "0502",
+        "product_id": "1316",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "MapperAcerAppMode",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Acer Gaming Controller Nitro APP mode",
+        "vendor_id": "0502",
+        "product_id": "1317",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "MapperAcerAppMode",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 3 / SIXAXIS",
+        "vendor_id": "054c",
+        "product_id": "0268",
+        "vendor": "Sony Corp.",
+        "product": "Batoh Device / PlayStation 3 Controller",
+        "mapper": "MapperDualshock3SixAxis",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Playstation Dualshock 4",
+        "vendor_id": "054c",
+        "product_id": "05c4",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT1x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 (PS4 Slim)",
+        "vendor_id": "054c",
+        "product_id": "09cc",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT2x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 USB receiver",
+        "vendor_id": "054c",
+        "product_id": "0ba0",
+        "vendor": "Sony Corp.",
+        "product": "Dualshock4 Wireless Adaptor",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense",
+        "vendor_id": "054c",
+        "product_id": "0ce6",
+        "vendor": "Sony Corp.",
+        "product": "DualSense wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense Edge",
+        "vendor_id": "054c",
+        "product_id": "0df2",
+        "vendor": "Sony Corp.",
+        "product": "DualSense Edge wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "PlayStation Access",
+        "vendor_id": "054c",
+        "product_id": "0e5f",
+        "vendor": "Sony Corp.",
+        "product": "",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "JC-U3613M",
+        "vendor_id": "056e",
+        "product_id": "2004",
+        "vendor": "Elecom Co., Ltd",
+        "product": "JC-U3613M",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Elecom JC-U4013SBK (DirectInput mode)",
+        "vendor_id": "056e",
+        "product_id": "200f",
+        "vendor": "Elecom Co., Ltd",
+        "product": "JC-U4013S Gamepad",
+        "mapper": "MapperElecomWiredDirectInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Elecom JC-U4113SBK (DirectInput mode)",
+        "vendor_id": "056e",
+        "product_id": "2010",
+        "vendor": "Elecom Co., Ltd",
+        "product": "",
+        "mapper": "MapperElecomWirelessDirectInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "056e:2013",
+        "vendor_id": "056e",
+        "product_id": "2013",
+        "vendor": "Elecom Co., Ltd",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Switch Joy-Con L",
+        "vendor_id": "057e",
+        "product_id": "2006",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con L",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Joy-Con R",
+        "vendor_id": "057e",
+        "product_id": "2007",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con R",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Pro Controller",
+        "vendor_id": "057e",
+        "product_id": "2009",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Switch Pro Controller",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Charging Grip",
+        "vendor_id": "057e",
+        "product_id": "200e",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con Charging Grip",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "iBuffalo Classic",
+        "vendor_id": "0583",
+        "product_id": "2060",
+        "vendor": "Padix Co., Ltd (Rockfire)",
+        "product": "2-axis 8-button gamepad",
+        "mapper": "MapperIBuffalo",
+        "source": "mapping-table"
+      },
+      {
+        "name": "P3600",
+        "vendor_id": "06a3",
+        "product_id": "f51a",
+        "vendor": "Saitek PLC",
+        "product": "P3600",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Wired Xbox 360 Controller",
+        "vendor_id": "0738",
+        "product_id": "4716",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Wired Xbox 360 Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV FightStick SE for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4718",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV FightStick SE for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox 360 Controller",
+        "vendor_id": "0738",
+        "product_id": "4726",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Xbox 360 Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV FightPad for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4728",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV FightPad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "MicroCON for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4736",
+        "vendor": "Mad Catz, Inc.",
+        "product": "MicroCON for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV Wired Controller for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV Wired Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Beat Pad for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4740",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Arcade Game Stick",
+        "vendor_id": "0738",
+        "product_id": "4758",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Arcade Game Stick",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "FightStick TE 2 for Xbox One",
+        "vendor_id": "0738",
+        "product_id": "4a01",
+        "vendor": "Mad Catz, Inc.",
+        "product": "FightStick TE 2 for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Portable Drum Kit",
+        "vendor_id": "0738",
+        "product_id": "9871",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Portable Drum Kit",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Modern Warfare 2 Controller for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "b726",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Modern Warfare 2 Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Marvel VS Capcom 2 TE FightStick for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "b738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Marvel VS Capcom 2 TE FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Joytech Neo SE Advanced Gamepad",
+        "vendor_id": "0738",
+        "product_id": "beef",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Joytech Neo SE Advanced Gamepad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Saitek Cyborg Rumble Pad",
+        "vendor_id": "0738",
+        "product_id": "cb02",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek Cyborg Rumble Pad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Saitek P3200 Rumble Pad",
+        "vendor_id": "0738",
+        "product_id": "cb03",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek P3200 Rumble Pad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Saitek Aviator Stick AV8R02",
+        "vendor_id": "0738",
+        "product_id": "cb29",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek Aviator Stick AV8R02",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Super Street Fighter IV FightStick TE S for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "f738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Super Street Fighter IV FightStick TE S for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Mad Catz Gamepad",
+        "vendor_id": "07ff",
+        "product_id": "ffff",
+        "vendor": "Unknown",
+        "product": "Mad Catz Gamepad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "SmartJoy PLUS Adapter",
+        "vendor_id": "0925",
+        "product_id": "0005",
+        "vendor": "Lakeview Research",
+        "product": "Gamtec.,Ltd SmartJoy PLUS Adapter",
+        "mapper": "MapperLakeviewResearch",
+        "source": "mapping-table"
+      },
+      {
+        "name": "WiseGroup MP-8866",
+        "vendor_id": "0925",
+        "product_id": "8866",
+        "vendor": "Lakeview Research",
+        "product": "WiseGroup Ltd, MP-8866 Dual Joypad",
+        "mapper": "MapperLakeviewResearch",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nvidia Shield gamepad (2015)",
+        "vendor_id": "0955",
+        "product_id": "7210",
+        "vendor": "NVIDIA Corp.",
+        "product": "SHIELD Controller",
+        "mapper": "MapperNvShield",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nvidia Shield gamepad (2017)",
+        "vendor_id": "0955",
+        "product_id": "7214",
+        "vendor": "NVIDIA Corp.",
+        "product": "",
+        "mapper": "MapperNvShield2017",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Snakebyte iDroid:con",
+        "vendor_id": "0a5c",
+        "product_id": "8502",
+        "vendor": "Broadcom Corp.",
+        "product": "",
+        "mapper": "MapperSnakebyteIDroidCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nexus Player Controller",
+        "vendor_id": "0b05",
+        "product_id": "4500",
+        "vendor": "ASUSTek Computer, Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "XSkills Gamecube USB adapter",
+        "vendor_id": "0b43",
+        "product_id": "0005",
+        "vendor": "Play.com, Inc.",
+        "product": "GameCube Adaptor",
+        "mapper": "MapperXSkills",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Disney's High School Musical 3 Dance Pad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0105",
+        "vendor": "Logic3",
+        "product": "Disney's High School Musical 3 Dance Pad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow AX.1 Gamepad",
+        "vendor_id": "0e6f",
+        "product_id": "0113",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1 Gamepad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "011f",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PDP EA Sports Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0131",
+        "vendor": "Logic3",
+        "product": "PDP EA Sports Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0133",
+        "vendor": "Logic3",
+        "product": "Wired Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow Prismatic Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0139",
+        "vendor": "Logic3",
+        "product": "Afterglow Prismatic Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PDP Xbox One Controller",
+        "vendor_id": "0e6f",
+        "product_id": "013a",
+        "vendor": "Logic3",
+        "product": "PDP Xbox One Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0146",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PDP Marvel Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0147",
+        "vendor": "Logic3",
+        "product": "PDP Marvel Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PDP Arcade Stick for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "015c",
+        "vendor": "Logic3",
+        "product": "PDP Arcade Stick for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Camo Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0161",
+        "vendor": "Logic3",
+        "product": "Camo Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Xbox One Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0162",
+        "vendor": "Logic3",
+        "product": "Xbox One Wired Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Legendary Collection Deliverer of Truth",
+        "vendor_id": "0e6f",
+        "product_id": "0163",
+        "vendor": "Logic3",
+        "product": "Legendary Collection Deliverer of Truth",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Battlefield 1 Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0164",
+        "vendor": "Logic3",
+        "product": "Battlefield 1 Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Titanfall 2 Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0165",
+        "vendor": "Logic3",
+        "product": "Titanfall 2 Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Pelican PL-3601",
+        "vendor_id": "0e6f",
+        "product_id": "0201",
+        "vendor": "Logic3",
+        "product": "Pelican PL-3601",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0213",
+        "vendor": "Logic3",
+        "product": "Afterglow Gamepad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "021f",
+        "vendor": "Logic3",
+        "product": "Rock Candy Gamepad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0246",
+        "vendor": "Logic3",
+        "product": "Rock Candy Gamepad for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0301",
+        "vendor": "Logic3",
+        "product": "Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0346",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0401",
+        "vendor": "Logic3",
+        "product": "Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow AX.1 Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0413",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1 Gamepad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0501",
+        "vendor": "Logic3",
+        "product": "Wired Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow AX.1",
+        "vendor_id": "0e6f",
+        "product_id": "f900",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "XFXforce XGEAR PS2 Controller",
+        "vendor_id": "0e8f",
+        "product_id": "0003",
+        "vendor": "GreenAsia Inc.",
+        "product": "MaxFire Blaze2",
+        "mapper": "MapperXGEAR",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dead or Alive 4 FightStick for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000a",
+        "vendor": "Hori Co., Ltd",
+        "product": "Dead or Alive 4 FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Horipad EX Turbo for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000c",
+        "vendor": "Hori Co., Ltd",
+        "product": "Horipad EX Turbo for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Fighting Stick EX2 for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000d",
+        "vendor": "Hori Co., Ltd",
+        "product": "Fighting Stick EX2 for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro.EX for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "0016",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro.EX for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Aracde Pro.VX",
+        "vendor_id": "0f0d",
+        "product_id": "001b",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Aracde Pro.VX",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro Hayabusa for Xbox One",
+        "vendor_id": "0f0d",
+        "product_id": "0063",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro Hayabusa for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Horipad One",
+        "vendor_id": "0f0d",
+        "product_id": "0067",
+        "vendor": "Hori Co., Ltd",
+        "product": "Horipad One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "0078",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "HORIPAD for Nintendo Switch",
+        "vendor_id": "0f0d",
+        "product_id": "00c1",
+        "vendor": "Hori Co., Ltd",
+        "product": "HORIPAD for Nintendo Switch",
+        "mapper": "MapperHoripadSwitch",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Zeemote: SteelSeries FREE",
+        "vendor_id": "1038",
+        "product_id": "1412",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "MapperSteelSeriesZeemote",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SteelSeries Stratus XL USB",
+        "vendor_id": "1038",
+        "product_id": "1418",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "MapperSteelSeriesStratusXLUsb",
+        "source": "mapping-table"
+      },
+      {
+        "name": "1038:1430",
+        "vendor_id": "1038",
+        "product_id": "1430",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "1038:1431",
+        "vendor_id": "1038",
+        "product_id": "1431",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "1038:1434",
+        "vendor_id": "1038",
+        "product_id": "1434",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "GC-100XF",
+        "vendor_id": "11c9",
+        "product_id": "55f0",
+        "vendor": "Nacon",
+        "product": "GC-100XF",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Dance Pad for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0004",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Dance Pad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Afterglow Wired Controller for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0301",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Afterglow Wired Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Mortal Kombat Klassic FightStick for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0303",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Mortal Kombat Klassic FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Guitar Hero X-plorer",
+        "vendor_id": "1430",
+        "product_id": "4748",
+        "vendor": "RedOctane",
+        "product": "Guitar Hero X-plorer",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1430",
+        "product_id": "f801",
+        "vendor": "RedOctane",
+        "product": "Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller for Xbox 360",
+        "vendor_id": "146b",
+        "product_id": "0601",
+        "vendor": "BigBen Interactive",
+        "product": "Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "DeathAdder 2013",
+        "vendor_id": "1532",
+        "product_id": "0037",
+        "vendor": "Razer USA, Ltd",
+        "product": "DeathAdder 2013",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Razer Serval Controller",
+        "vendor_id": "1532",
+        "product_id": "0900",
+        "vendor": "Razer USA, Ltd",
+        "product": "",
+        "mapper": "MapperRazerServal",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Atrox Arcade Stick for Xbox One",
+        "vendor_id": "1532",
+        "product_id": "0a00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Atrox Arcade Stick for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Wildcat",
+        "vendor_id": "1532",
+        "product_id": "0a03",
+        "vendor": "Razer USA, Ltd",
+        "product": "Wildcat",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Power A Mini Pro Elite",
+        "vendor_id": "15e4",
+        "product_id": "3f00",
+        "vendor": "Numark",
+        "product": "Power A Mini Pro Elite",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Airflo Wired Controller for Xbox 360",
+        "vendor_id": "15e4",
+        "product_id": "3f0a",
+        "vendor": "Numark",
+        "product": "Airflo Wired Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Batarang controller for Xbox 360",
+        "vendor_id": "15e4",
+        "product_id": "3f10",
+        "vendor": "Numark",
+        "product": "Batarang controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "162e:beef",
+        "vendor_id": "162e",
+        "product_id": "beef",
+        "vendor": "Razer USA, Ltd",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Onza Tournament Edition controller",
+        "vendor_id": "1689",
+        "product_id": "fd00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Onza Tournament Edition controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Onza Classic Edition",
+        "vendor_id": "1689",
+        "product_id": "fd01",
+        "vendor": "Razer USA, Ltd",
+        "product": "Onza Classic Edition",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Sabertooth Elite",
+        "vendor_id": "1689",
+        "product_id": "fe00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Sabertooth Elite",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "ADT-1 Controller",
+        "vendor_id": "18d1",
+        "product_id": "2c40",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller",
+        "vendor_id": "18d1",
+        "product_id": "9400",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperStadiaController",
+        "source": "mapping-table"
+      },
+      {
+        "name": "1949:041a",
+        "vendor_id": "1949",
+        "product_id": "041a",
+        "vendor": "Lab126, Inc.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Band Guitar for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0002",
+        "vendor": "Harmonix Music",
+        "product": "Rock Band Guitar for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Band Drum Kit for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0003",
+        "vendor": "Harmonix Music",
+        "product": "Rock Band Drum Kit for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Ion Drum Rocker for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0130",
+        "vendor": "Harmonix Music",
+        "product": "Ion Drum Rocker for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1bad",
+        "product_id": "f016",
+        "vendor": "Harmonix Music",
+        "product": "Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV SE FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f018",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV SE FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "BrawlStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f019",
+        "vendor": "Harmonix Music",
+        "product": "BrawlStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Ghost Recon Future Soldier Gamepad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f021",
+        "vendor": "Harmonix Music",
+        "product": "Ghost Recon Future Soldier Gamepad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "MLG Pro Circuit Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f023",
+        "vendor": "Harmonix Music",
+        "product": "MLG Pro Circuit Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Call of Duty Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f025",
+        "vendor": "Harmonix Music",
+        "product": "Call of Duty Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "FPS Pro Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f027",
+        "vendor": "Harmonix Music",
+        "product": "FPS Pro Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV FightPad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f028",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV FightPad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "FightPad",
+        "vendor_id": "1bad",
+        "product_id": "f02e",
+        "vendor": "Harmonix Music",
+        "product": "FightPad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "MC2 MicroCON Racing Wheel for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f030",
+        "vendor": "Harmonix Music",
+        "product": "MC2 MicroCON Racing Wheel for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "MicroCON Gamepad Pro for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f036",
+        "vendor": "Harmonix Music",
+        "product": "MicroCON Gamepad Pro for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV FightStick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f038",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV FightStick TE for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Marvel VS Capcom 2 Tournament Stick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f039",
+        "vendor": "Harmonix Music",
+        "product": "Marvel VS Capcom 2 Tournament Stick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter X Tekken FightStick Pro for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03a",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter X Tekken FightStick Pro for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Street Fighter IV Arcade Stick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03d",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV Arcade Stick TE for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "MLG Arcade FightStick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03e",
+        "vendor": "Harmonix Music",
+        "product": "MLG Arcade FightStick TE for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Soulcalibur FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03f",
+        "vendor": "Harmonix Music",
+        "product": "Soulcalibur FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Arcade FightStick TE S+ for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f042",
+        "vendor": "Harmonix Music",
+        "product": "Arcade FightStick TE S+ for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "FightStick TE2 for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f080",
+        "vendor": "Harmonix Music",
+        "product": "FightStick TE2 for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Horipad EX2 Turbo for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f501",
+        "vendor": "Harmonix Music",
+        "product": "Horipad EX2 Turbo for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro.VX SA for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f502",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.VX SA for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Fighting Stick VX for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f503",
+        "vendor": "Harmonix Music",
+        "product": "Fighting Stick VX for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro.EX",
+        "vendor_id": "1bad",
+        "product_id": "f504",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.EX",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Fighting Stick EX2B for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f505",
+        "vendor": "Harmonix Music",
+        "product": "Fighting Stick EX2B for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro.EX Premium VLX for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f506",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.EX Premium VLX for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1bad",
+        "product_id": "f900",
+        "vendor": "Harmonix Music",
+        "product": "Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "GameStop Controller",
+        "vendor_id": "1bad",
+        "product_id": "f901",
+        "vendor": "Harmonix Music",
+        "product": "GameStop Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Tron Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f903",
+        "vendor": "Harmonix Music",
+        "product": "Tron Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PDP Versus Fighting Pad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f904",
+        "vendor": "Harmonix Music",
+        "product": "PDP Versus Fighting Pad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Mortal Kombat FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f906",
+        "vendor": "Harmonix Music",
+        "product": "Mortal Kombat FightStick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Gamepad",
+        "vendor_id": "1bad",
+        "product_id": "fa01",
+        "vendor": "Harmonix Music",
+        "product": "Gamepad",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Razer Onza Tournament Edition",
+        "vendor_id": "1bad",
+        "product_id": "fd00",
+        "vendor": "Harmonix Music",
+        "product": "Razer Onza Tournament Edition",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Razer Onza Classic Edition",
+        "vendor_id": "1bad",
+        "product_id": "fd01",
+        "vendor": "Harmonix Music",
+        "product": "Razer Onza Classic Edition",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Moga Pro Controller (HID mode)",
+        "vendor_id": "20d6",
+        "product_id": "6271",
+        "vendor": "DAP Technologies",
+        "product": "",
+        "mapper": "MapperMoga",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Moga 2 HID",
+        "vendor_id": "20d6",
+        "product_id": "89e5",
+        "vendor": "DAP Technologies",
+        "product": "",
+        "mapper": "MapperMoga",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Bluetooth)",
+        "vendor_id": "2378",
+        "product_id": "1008",
+        "vendor": "OnLive",
+        "product": "",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Wired)",
+        "vendor_id": "2378",
+        "product_id": "100a",
+        "vendor": "OnLive",
+        "product": "Universal Wireless Controller",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Razer Atrox Gaming Arcade Stick",
+        "vendor_id": "24c6",
+        "product_id": "5000",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Razer Atrox Gaming Arcade Stick",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PowerA Mini ProEX Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5300",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA Mini ProEX Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Airflo Wired Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5303",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Airflo Wired Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "ProEX Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "530a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "ProEX Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Pro Ex mini for XBOX",
+        "vendor_id": "24c6",
+        "product_id": "531a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Pro Ex mini for XBOX",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "FUS1ON Tournament Controller",
+        "vendor_id": "24c6",
+        "product_id": "5397",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "FUS1ON Tournament Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PowerA CPFA115320-01 [Mini Controller for Xbox One]",
+        "vendor_id": "24c6",
+        "product_id": "541a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA CPFA115320-01 [Mini Controller for Xbox One]",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Spectra for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "542a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Spectra for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "PowerA Wired Controller for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "543a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA Wired Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Horipad EX2 Turbo",
+        "vendor_id": "24c6",
+        "product_id": "5500",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Horipad EX2 Turbo",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Hori Real Arcade Pro.VX-SA for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5501",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Real Arcade Pro.VX-SA for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Hori Fighting Stick VX Alt for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5502",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Fighting Stick VX Alt for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Hori Fighting Edge for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5503",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Fighting Edge for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Hori Soulcalibur V Stick for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5506",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Soulcalibur V Stick for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Hori Gem Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "550d",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Gem Controller for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "550e",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Fusion Pro Controller",
+        "vendor_id": "24c6",
+        "product_id": "551a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Fusion Pro Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Fusion Controller for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "561a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Fusion Controller for Xbox One",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Ferrari 458 Italia Racing Wheel",
+        "vendor_id": "24c6",
+        "product_id": "5b00",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Ferrari 458 Italia Racing Wheel",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "GPX Controller",
+        "vendor_id": "24c6",
+        "product_id": "5b02",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "GPX Controller",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "24c6:5b03",
+        "vendor_id": "24c6",
+        "product_id": "5b03",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Sabertooth Elite",
+        "vendor_id": "24c6",
+        "product_id": "5d04",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Sabertooth Elite",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "fafe",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Rock Candy Gamepad for Xbox 360",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "OUYA Controller",
+        "vendor_id": "2836",
+        "product_id": "0001",
+        "vendor": "OUYA",
+        "product": "",
+        "mapper": "MapperOUYA",
+        "source": "mapping-table"
+      },
+      {
+        "name": "28de:11ff",
+        "vendor_id": "28de",
+        "product_id": "11ff",
+        "vendor": "Valve Software",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "DJI FPV Remote Controller 2",
+        "vendor_id": "2ca3",
+        "product_id": "1020",
+        "vendor": "DJI Technology Co., Ltd.",
+        "product": "",
+        "mapper": "MapperDjiFpv",
+        "source": "mapping-table"
+      },
+      {
+        "name": "2dc8:3106",
+        "vendor_id": "2dc8",
+        "product_id": "3106",
+        "vendor": "8BitDo",
+        "product": "",
+        "mapper": "MapperXInputStyleGamepad",
+        "source": "xinput-fallback"
+      },
+      {
+        "name": "SCUF Vantage, SCUF Vantage 2",
+        "vendor_id": "2e95",
+        "product_id": "7725",
+        "vendor": "SCUF Gaming",
+        "product": "Controller",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "boom PSX+N64 USB Converter",
+        "vendor_id": "6666",
+        "product_id": "0667",
+        "vendor": "Prototype product Vendor ID",
+        "product": "WiseGroup Smart Joy PSX, PS-PC Smart JoyPad",
+        "mapper": "MapperBoomN64Psx",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller prototype",
+        "vendor_id": "6666",
+        "product_id": "9401",
+        "vendor": "Prototype product Vendor ID",
+        "product": "",
+        "mapper": "MapperStadiaControllerOldFirmware",
+        "source": "mapping-table"
+      }
+    ],
+    "mac": [
+      {
+        "name": "PowerA Wireless Controller - Nintendo GameCube style",
+        "vendor_id": "0000",
+        "product_id": "ff00",
+        "vendor": "",
+        "product": "",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DragonRise Generic USB",
+        "vendor_id": "0079",
+        "product_id": "0006",
+        "vendor": "DragonRise Inc.",
+        "product": "PC TWIN SHOCK Gamepad",
+        "mapper": "MapperDragonRiseGeneric",
+        "source": "mapping-table"
+      },
+      {
+        "name": "2Axes 8Keys Game Pad",
+        "vendor_id": "0079",
+        "product_id": "0011",
+        "vendor": "DragonRise Inc.",
+        "product": "Gamepad",
+        "mapper": "Mapper2Axes8Keys",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox 360 Wired",
+        "vendor_id": "045e",
+        "product_id": "028e",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Controller",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox 360 Wireless",
+        "vendor_id": "045e",
+        "product_id": "028f",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Wireless Controller via Plug & Charge Cable",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Wired",
+        "vendor_id": "045e",
+        "product_id": "02d1",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Wired (2015 FW)",
+        "vendor_id": "045e",
+        "product_id": "02dd",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller (Firmware 2015)",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "02e0",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Wireless Controller",
+        "mapper": "MapperXboxOneS",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Elite (USB)",
+        "vendor_id": "045e",
+        "product_id": "02e3",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Elite Controller",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One S (USB)",
+        "vendor_id": "045e",
+        "product_id": "02ea",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "02fd",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One S Controller [Bluetooth]",
+        "mapper": "MapperXboxOneS2016Firmware",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox 360 Wireless",
+        "vendor_id": "045e",
+        "product_id": "0719",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox 360 Wireless Adapter",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Elite 2 (USB)",
+        "vendor_id": "045e",
+        "product_id": "0b00",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Elite Series 2 Controller (model 1797)",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One Elite 2 (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b05",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxElite2Bluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Adaptive Controller (USB)",
+        "vendor_id": "045e",
+        "product_id": "0b0a",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXbox360Gamepad",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Adaptive Controller (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b0c",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxOneBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Series X (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b13",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxSeriesXBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b20",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Adaptive (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b21",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Elite Series 2 (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b22",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F310, D mode",
+        "vendor_id": "046d",
+        "product_id": "c216",
+        "vendor": "Logitech, Inc.",
+        "product": "F310 Gamepad [DirectInput Mode]",
+        "mapper": "MapperDirectInputStyle",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F510, D mode",
+        "vendor_id": "046d",
+        "product_id": "c218",
+        "vendor": "Logitech, Inc.",
+        "product": "F510 Gamepad [DirectInput Mode]",
+        "mapper": "MapperDirectInputStyle",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F710, D mode",
+        "vendor_id": "046d",
+        "product_id": "c219",
+        "vendor": "Logitech, Inc.",
+        "product": "F710 Gamepad [DirectInput Mode]",
+        "mapper": "MapperDirectInputStyle",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Playstation SIXAXIS",
+        "vendor_id": "054c",
+        "product_id": "0268",
+        "vendor": "Sony Corp.",
+        "product": "Batoh Device / PlayStation 3 Controller",
+        "mapper": "MapperPlaystationSixAxis",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Playstation Dualshock 4",
+        "vendor_id": "054c",
+        "product_id": "05c4",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT1x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 (PS4 Slim)",
+        "vendor_id": "054c",
+        "product_id": "09cc",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT2x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 USB receiver",
+        "vendor_id": "054c",
+        "product_id": "0ba0",
+        "vendor": "Sony Corp.",
+        "product": "Dualshock4 Wireless Adaptor",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense",
+        "vendor_id": "054c",
+        "product_id": "0ce6",
+        "vendor": "Sony Corp.",
+        "product": "DualSense wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense Edge",
+        "vendor_id": "054c",
+        "product_id": "0df2",
+        "vendor": "Sony Corp.",
+        "product": "DualSense Edge wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "PlayStation Access",
+        "vendor_id": "054c",
+        "product_id": "0e5f",
+        "vendor": "Sony Corp.",
+        "product": "",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Joy-Con L",
+        "vendor_id": "057e",
+        "product_id": "2006",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con L",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Joy-Con R",
+        "vendor_id": "057e",
+        "product_id": "2007",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con R",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Pro Controller",
+        "vendor_id": "057e",
+        "product_id": "2009",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Switch Pro Controller",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Charging Grip",
+        "vendor_id": "057e",
+        "product_id": "200e",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con Charging Grip",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "iBuffalo Classic",
+        "vendor_id": "0583",
+        "product_id": "2060",
+        "vendor": "Padix Co., Ltd (Rockfire)",
+        "product": "2-axis 8-button gamepad",
+        "mapper": "MapperIBuffalo",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SmartJoy PLUS Adapter",
+        "vendor_id": "0925",
+        "product_id": "0005",
+        "vendor": "Lakeview Research",
+        "product": "Gamtec.,Ltd SmartJoy PLUS Adapter",
+        "mapper": "MapperSmartJoyPLUS",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nvidia Shield gamepad (2015)",
+        "vendor_id": "0955",
+        "product_id": "7210",
+        "vendor": "NVIDIA Corp.",
+        "product": "SHIELD Controller",
+        "mapper": "MapperNvShield",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Snakebyte iDroid:con",
+        "vendor_id": "0a5c",
+        "product_id": "8502",
+        "vendor": "Broadcom Corp.",
+        "product": "",
+        "mapper": "MapperSnakebyteIDroidCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nexus Player Controller",
+        "vendor_id": "0b05",
+        "product_id": "4500",
+        "vendor": "ASUSTek Computer, Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "XSkills Gamecube USB adapter",
+        "vendor_id": "0b43",
+        "product_id": "0005",
+        "vendor": "Play.com, Inc.",
+        "product": "GameCube Adaptor",
+        "mapper": "MapperXSkills",
+        "source": "mapping-table"
+      },
+      {
+        "name": "XFXforce XGEAR PS2 Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0003",
+        "vendor": "Logic3",
+        "product": "Freebird wireless Controller",
+        "mapper": "MapperXGEAR",
+        "source": "mapping-table"
+      },
+      {
+        "name": "HORIPAD for Nintendo Switch",
+        "vendor_id": "0f0d",
+        "product_id": "00c1",
+        "vendor": "Hori Co., Ltd",
+        "product": "HORIPAD for Nintendo Switch",
+        "mapper": "MapperHoripadSwitch",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Razer Serval Controller",
+        "vendor_id": "1532",
+        "product_id": "0900",
+        "vendor": "Razer USA, Ltd",
+        "product": "",
+        "mapper": "MapperRazerServal",
+        "source": "mapping-table"
+      },
+      {
+        "name": "ADT-1 Controller",
+        "vendor_id": "18d1",
+        "product_id": "2c40",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller",
+        "vendor_id": "18d1",
+        "product_id": "9400",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperStadiaController",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Moga Pro Controller (HID mode)",
+        "vendor_id": "20d6",
+        "product_id": "6271",
+        "vendor": "DAP Technologies",
+        "product": "",
+        "mapper": "MapperMogaPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Macally iShockX, analog mode",
+        "vendor_id": "2222",
+        "product_id": "0060",
+        "vendor": "MacAlly",
+        "product": "",
+        "mapper": "MapperDirectInputStyle",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Macally iShock",
+        "vendor_id": "2222",
+        "product_id": "4010",
+        "vendor": "MacAlly",
+        "product": "",
+        "mapper": "MapperMacallyIShock",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Bluetooth)",
+        "vendor_id": "2378",
+        "product_id": "1008",
+        "vendor": "OnLive",
+        "product": "",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Wired)",
+        "vendor_id": "2378",
+        "product_id": "100a",
+        "vendor": "OnLive",
+        "product": "Universal Wireless Controller",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OUYA Controller",
+        "vendor_id": "2836",
+        "product_id": "0001",
+        "vendor": "OUYA",
+        "product": "",
+        "mapper": "MapperOUYA",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DJI FPV Remote Controller 2",
+        "vendor_id": "2ca3",
+        "product_id": "1020",
+        "vendor": "DJI Technology Co., Ltd.",
+        "product": "",
+        "mapper": "MapperDjiFpv",
+        "source": "mapping-table"
+      },
+      {
+        "name": "8BitDo Ultimate Wireless 2C (Bluetooth)",
+        "vendor_id": "2dc8",
+        "product_id": "301b",
+        "vendor": "8BitDo",
+        "product": "",
+        "mapper": "Mapper8BitDoBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "8BitDo Ultimate Wireless 2C 81HE (Bluetooth)",
+        "vendor_id": "2dc8",
+        "product_id": "6012",
+        "vendor": "8BitDo",
+        "product": "",
+        "mapper": "Mapper8BitDoBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "SCUF Vantage, SCUF Vantage 2",
+        "vendor_id": "2e95",
+        "product_id": "7725",
+        "vendor": "SCUF Gaming",
+        "product": "Controller",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "boom PSX+N64 USB Converter",
+        "vendor_id": "6666",
+        "product_id": "0667",
+        "vendor": "Prototype product Vendor ID",
+        "product": "WiseGroup Smart Joy PSX, PS-PC Smart JoyPad",
+        "mapper": "MapperBoomN64Psx",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller prototype",
+        "vendor_id": "6666",
+        "product_id": "9401",
+        "vendor": "Prototype product Vendor ID",
+        "product": "",
+        "mapper": "MapperStadiaControllerOldFirmware",
+        "source": "mapping-table"
+      }
+    ],
+    "windows": [
+      {
+        "name": "PowerA Wireless Controller - Nintendo GameCube style",
+        "vendor_id": "0000",
+        "product_id": "ff00",
+        "vendor": "",
+        "product": "",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "2Axes 8Keys Game Pad",
+        "vendor_id": "0079",
+        "product_id": "0011",
+        "vendor": "DragonRise Inc.",
+        "product": "Gamepad",
+        "mapper": "Mapper2Axes8Keys",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Steering Wheel for Xbox",
+        "vendor_id": "044f",
+        "product_id": "0f00",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Steering Wheel for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Steering Wheel for Xbox",
+        "vendor_id": "044f",
+        "product_id": "0f03",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Steering Wheel for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller for Xbox",
+        "vendor_id": "044f",
+        "product_id": "0f07",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Controller for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Modena GT Wheel",
+        "vendor_id": "044f",
+        "product_id": "0f10",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Modena GT Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Gamepad GP XID",
+        "vendor_id": "044f",
+        "product_id": "b326",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Gamepad GP XID",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "045e",
+        "product_id": "0202",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller S",
+        "vendor_id": "045e",
+        "product_id": "0285",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller S",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "045e:0287",
+        "vendor_id": "045e",
+        "product_id": "0287",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller S Hub",
+        "vendor_id": "045e",
+        "product_id": "0288",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller S Hub",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller S",
+        "vendor_id": "045e",
+        "product_id": "0289",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller S",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox360 Controller",
+        "vendor_id": "045e",
+        "product_id": "028e",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox 360 Wireless Receiver for Windows",
+        "vendor_id": "045e",
+        "product_id": "0291",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox 360 Wireless Receiver for Windows",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox360 Big Button IR",
+        "vendor_id": "045e",
+        "product_id": "02a0",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox360 Big Button IR",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "045e:02a1",
+        "vendor_id": "045e",
+        "product_id": "02a1",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One Controller",
+        "vendor_id": "045e",
+        "product_id": "02d1",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One Controller (Firmware 2015)",
+        "vendor_id": "045e",
+        "product_id": "02dd",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller (Firmware 2015)",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One Elite Controller",
+        "vendor_id": "045e",
+        "product_id": "02e3",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Elite Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Wireless Adapter for Windows",
+        "vendor_id": "045e",
+        "product_id": "02e6",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Wireless Adapter for Windows",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One Controller",
+        "vendor_id": "045e",
+        "product_id": "02ea",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox One Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "045e:02ff",
+        "vendor_id": "045e",
+        "product_id": "02ff",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox 360 Wireless Adapter",
+        "vendor_id": "045e",
+        "product_id": "0719",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox 360 Wireless Adapter",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Elite Series 2 Controller (model 1797)",
+        "vendor_id": "045e",
+        "product_id": "0b00",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Elite Series 2 Controller (model 1797)",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "045e:0b06",
+        "vendor_id": "045e",
+        "product_id": "0b06",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "045e:0b0a",
+        "vendor_id": "045e",
+        "product_id": "0b0a",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "045e",
+        "product_id": "0b12",
+        "vendor": "Microsoft Corp.",
+        "product": "Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One S (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b20",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Elite Series 2 (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b21",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Xbox Adaptive (Bluetooth)",
+        "vendor_id": "045e",
+        "product_id": "0b22",
+        "vendor": "Microsoft Corp.",
+        "product": "",
+        "mapper": "MapperXboxBluetooth",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F310, D-mode",
+        "vendor_id": "046d",
+        "product_id": "c216",
+        "vendor": "Logitech, Inc.",
+        "product": "F310 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F510, D-mode",
+        "vendor_id": "046d",
+        "product_id": "c218",
+        "vendor": "Logitech, Inc.",
+        "product": "F510 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Logitech F710, D-mode",
+        "vendor_id": "046d",
+        "product_id": "c219",
+        "vendor": "Logitech, Inc.",
+        "product": "F710 Gamepad [DirectInput Mode]",
+        "mapper": "MapperLogitechDInput",
+        "source": "mapping-table"
+      },
+      {
+        "name": "F310 Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21d",
+        "vendor": "Logitech, Inc.",
+        "product": "F310 Gamepad [XInput Mode]",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "F510 Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21e",
+        "vendor": "Logitech, Inc.",
+        "product": "F510 Gamepad [XInput Mode]",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "F710 Wireless Gamepad [XInput Mode]",
+        "vendor_id": "046d",
+        "product_id": "c21f",
+        "vendor": "Logitech, Inc.",
+        "product": "F710 Wireless Gamepad [XInput Mode]",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "046d:c242",
+        "vendor_id": "046d",
+        "product_id": "c242",
+        "vendor": "Logitech, Inc.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Cordless Controller for Xbox",
+        "vendor_id": "046d",
+        "product_id": "ca84",
+        "vendor": "Logitech, Inc.",
+        "product": "Cordless Controller for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Thunderpad for Xbox",
+        "vendor_id": "046d",
+        "product_id": "ca88",
+        "vendor": "Logitech, Inc.",
+        "product": "Thunderpad for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Precision Vibration Feedback Wheel for Xbox",
+        "vendor_id": "046d",
+        "product_id": "ca8a",
+        "vendor": "Logitech, Inc.",
+        "product": "Precision Vibration Feedback Wheel for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "DriveFX Racing Wheel",
+        "vendor_id": "046d",
+        "product_id": "caa3",
+        "vendor": "Logitech, Inc.",
+        "product": "DriveFX Racing Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "0502:1304",
+        "vendor_id": "0502",
+        "product_id": "1304",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "0502:1305",
+        "vendor_id": "0502",
+        "product_id": "1305",
+        "vendor": "Acer, Inc.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Playstation Dualshock 4",
+        "vendor_id": "054c",
+        "product_id": "05c4",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT1x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 (PS4 Slim)",
+        "vendor_id": "054c",
+        "product_id": "09cc",
+        "vendor": "Sony Corp.",
+        "product": "DualShock 4 [CUH-ZCT2x]",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Dualshock 4 USB receiver",
+        "vendor_id": "054c",
+        "product_id": "0ba0",
+        "vendor": "Sony Corp.",
+        "product": "Dualshock4 Wireless Adaptor",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense",
+        "vendor_id": "054c",
+        "product_id": "0ce6",
+        "vendor": "Sony Corp.",
+        "product": "DualSense wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "DualSense Edge",
+        "vendor_id": "054c",
+        "product_id": "0df2",
+        "vendor": "Sony Corp.",
+        "product": "DualSense Edge wireless controller (PS5)",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "PlayStation Access",
+        "vendor_id": "054c",
+        "product_id": "0e5f",
+        "vendor": "Sony Corp.",
+        "product": "",
+        "mapper": "MapperDualSense",
+        "source": "mapping-table"
+      },
+      {
+        "name": "JC-U3613M",
+        "vendor_id": "056e",
+        "product_id": "2004",
+        "vendor": "Elecom Co., Ltd",
+        "product": "JC-U3613M",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "056e:2013",
+        "vendor_id": "056e",
+        "product_id": "2013",
+        "vendor": "Elecom Co., Ltd",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Switch Joy-Con L",
+        "vendor_id": "057e",
+        "product_id": "2006",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con L",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Joy-Con R",
+        "vendor_id": "057e",
+        "product_id": "2007",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con R",
+        "mapper": "MapperSwitchJoyCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Pro Controller",
+        "vendor_id": "057e",
+        "product_id": "2009",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Switch Pro Controller",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Switch Charging Grip",
+        "vendor_id": "057e",
+        "product_id": "200e",
+        "vendor": "Nintendo Co., Ltd",
+        "product": "Joy-Con Charging Grip",
+        "mapper": "MapperSwitchPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "iBuffalo Classic",
+        "vendor_id": "0583",
+        "product_id": "2060",
+        "vendor": "Padix Co., Ltd (Rockfire)",
+        "product": "2-axis 8-button gamepad",
+        "mapper": "MapperIBuffalo",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Mad Catz Controller",
+        "vendor_id": "05fd",
+        "product_id": "1007",
+        "vendor": "InterAct, Inc.",
+        "product": "Mad Catz Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PowerPad Pro X-Box pad",
+        "vendor_id": "05fd",
+        "product_id": "107a",
+        "vendor": "InterAct, Inc.",
+        "product": "PowerPad Pro X-Box pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "05fe",
+        "product_id": "3030",
+        "vendor": "Chic Technology Corp.",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "05fe",
+        "product_id": "3031",
+        "vendor": "Chic Technology Corp.",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Logic3 Gamepad",
+        "vendor_id": "062a",
+        "product_id": "0020",
+        "vendor": "MosArt Semiconductor Corp.",
+        "product": "Logic3 Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Competition Pro Steering Wheel",
+        "vendor_id": "062a",
+        "product_id": "0033",
+        "vendor": "MosArt Semiconductor Corp.",
+        "product": "Competition Pro Steering Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Racing Wheel",
+        "vendor_id": "06a3",
+        "product_id": "0200",
+        "vendor": "Saitek PLC",
+        "product": "Racing Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Adrenalin Gamepad",
+        "vendor_id": "06a3",
+        "product_id": "0201",
+        "vendor": "Saitek PLC",
+        "product": "Adrenalin Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "P3600",
+        "vendor_id": "06a3",
+        "product_id": "f51a",
+        "vendor": "Saitek PLC",
+        "product": "P3600",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Wireless Controller",
+        "vendor_id": "0738",
+        "product_id": "4506",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Control Pad",
+        "vendor_id": "0738",
+        "product_id": "4516",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Control Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Control Pad Pro",
+        "vendor_id": "0738",
+        "product_id": "4520",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Control Pad Pro",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "LumiCON",
+        "vendor_id": "0738",
+        "product_id": "4522",
+        "vendor": "Mad Catz, Inc.",
+        "product": "LumiCON",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Control Pad Pro",
+        "vendor_id": "0738",
+        "product_id": "4526",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Control Pad Pro",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Universal MC2 Racing Wheel and Pedals",
+        "vendor_id": "0738",
+        "product_id": "4530",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Universal MC2 Racing Wheel and Pedals",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MicroCON",
+        "vendor_id": "0738",
+        "product_id": "4536",
+        "vendor": "Mad Catz, Inc.",
+        "product": "MicroCON",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Beat Pad",
+        "vendor_id": "0738",
+        "product_id": "4540",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Lynx Wireless Controller",
+        "vendor_id": "0738",
+        "product_id": "4556",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Lynx Wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MicroCON Wireless Controller",
+        "vendor_id": "0738",
+        "product_id": "4586",
+        "vendor": "Mad Catz, Inc.",
+        "product": "MicroCON Wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Blaster",
+        "vendor_id": "0738",
+        "product_id": "4588",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Blaster",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Beat Pad",
+        "vendor_id": "0738",
+        "product_id": "45ff",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Wired Xbox 360 Controller",
+        "vendor_id": "0738",
+        "product_id": "4716",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Wired Xbox 360 Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV FightStick SE for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4718",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV FightStick SE for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox 360 Controller",
+        "vendor_id": "0738",
+        "product_id": "4726",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Xbox 360 Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV FightPad for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4728",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV FightPad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MicroCON for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4736",
+        "vendor": "Mad Catz, Inc.",
+        "product": "MicroCON for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV Wired Controller for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Street Fighter IV Wired Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Beat Pad for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "4740",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Beat Pad Pro",
+        "vendor_id": "0738",
+        "product_id": "4743",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad Pro",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Arcade Game Stick",
+        "vendor_id": "0738",
+        "product_id": "4758",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Arcade Game Stick",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "FightStick TE 2 for Xbox One",
+        "vendor_id": "0738",
+        "product_id": "4a01",
+        "vendor": "Mad Catz, Inc.",
+        "product": "FightStick TE 2 for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Beat Pad Pro",
+        "vendor_id": "0738",
+        "product_id": "6040",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Beat Pad Pro",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Portable Drum Kit",
+        "vendor_id": "0738",
+        "product_id": "9871",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Portable Drum Kit",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Modern Warfare 2 Controller for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "b726",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Modern Warfare 2 Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Marvel VS Capcom 2 TE FightStick for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "b738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Marvel VS Capcom 2 TE FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Joytech Neo SE Advanced Gamepad",
+        "vendor_id": "0738",
+        "product_id": "beef",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Joytech Neo SE Advanced Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Saitek Cyborg Rumble Pad",
+        "vendor_id": "0738",
+        "product_id": "cb02",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek Cyborg Rumble Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Saitek P3200 Rumble Pad",
+        "vendor_id": "0738",
+        "product_id": "cb03",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek P3200 Rumble Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Saitek Aviator Stick AV8R02",
+        "vendor_id": "0738",
+        "product_id": "cb29",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Saitek Aviator Stick AV8R02",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Super Street Fighter IV FightStick TE S for Xbox 360",
+        "vendor_id": "0738",
+        "product_id": "f738",
+        "vendor": "Mad Catz, Inc.",
+        "product": "Super Street Fighter IV FightStick TE S for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Mad Catz Gamepad",
+        "vendor_id": "07ff",
+        "product_id": "ffff",
+        "vendor": "Unknown",
+        "product": "Mad Catz Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Nvidia Shield gamepad (2015)",
+        "vendor_id": "0955",
+        "product_id": "7210",
+        "vendor": "NVIDIA Corp.",
+        "product": "SHIELD Controller",
+        "mapper": "MapperNvShield",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nvidia Shield gamepad (2017)",
+        "vendor_id": "0955",
+        "product_id": "7214",
+        "vendor": "NVIDIA Corp.",
+        "product": "",
+        "mapper": "MapperNvShield2017",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Snakebyte iDroid:con",
+        "vendor_id": "0a5c",
+        "product_id": "8502",
+        "vendor": "Broadcom Corp.",
+        "product": "",
+        "mapper": "MapperSnakebyteIDroidCon",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Nexus Player Controller",
+        "vendor_id": "0b05",
+        "product_id": "4500",
+        "vendor": "ASUSTek Computer, Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "XSkills Gamecube USB adapter",
+        "vendor_id": "0b43",
+        "product_id": "0005",
+        "vendor": "Play.com, Inc.",
+        "product": "GameCube Adaptor",
+        "mapper": "MapperXSkills",
+        "source": "mapping-table"
+      },
+      {
+        "name": "PSX Vibration Feedback Converter / Intec Wireless Controller for Xbox",
+        "vendor_id": "0c12",
+        "product_id": "0005",
+        "vendor": "Zeroplus",
+        "product": "PSX Vibration Feedback Converter / Intec Wireless Controller for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Nyko Xbox Controller",
+        "vendor_id": "0c12",
+        "product_id": "8801",
+        "vendor": "Zeroplus",
+        "product": "Nyko Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "0c12",
+        "product_id": "8802",
+        "vendor": "Zeroplus",
+        "product": "Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Red Octane Ignition Xbox DDR Pad",
+        "vendor_id": "0c12",
+        "product_id": "8809",
+        "vendor": "Zeroplus",
+        "product": "Red Octane Ignition Xbox DDR Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Pelican Eclipse PL-2023",
+        "vendor_id": "0c12",
+        "product_id": "880a",
+        "vendor": "Zeroplus",
+        "product": "Pelican Eclipse PL-2023",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "0c12",
+        "product_id": "8810",
+        "vendor": "Zeroplus",
+        "product": "Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "VibraX",
+        "vendor_id": "0c12",
+        "product_id": "9902",
+        "vendor": "Zeroplus",
+        "product": "VibraX",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Pump It Up Pad",
+        "vendor_id": "0d2f",
+        "product_id": "0002",
+        "vendor": "Andamiro",
+        "product": "Pump It Up Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Gamester Controller",
+        "vendor_id": "0e4c",
+        "product_id": "1097",
+        "vendor": "Radica Games, Ltd",
+        "product": "Gamester Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Gamester Reflex",
+        "vendor_id": "0e4c",
+        "product_id": "1103",
+        "vendor": "Radica Games, Ltd",
+        "product": "Gamester Reflex",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Jtech Controller",
+        "vendor_id": "0e4c",
+        "product_id": "2390",
+        "vendor": "Radica Games, Ltd",
+        "product": "Jtech Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Gamester for Xbox",
+        "vendor_id": "0e4c",
+        "product_id": "3510",
+        "vendor": "Radica Games, Ltd",
+        "product": "Gamester for Xbox",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Freebird wireless Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0003",
+        "vendor": "Logic3",
+        "product": "Freebird wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Eclipse wireless Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0005",
+        "vendor": "Logic3",
+        "product": "Eclipse wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Edge wireless Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0006",
+        "vendor": "Logic3",
+        "product": "Edge wireless Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "After Glow Pro Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0008",
+        "vendor": "Logic3",
+        "product": "After Glow Pro Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Disney's High School Musical 3 Dance Pad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0105",
+        "vendor": "Logic3",
+        "product": "Disney's High School Musical 3 Dance Pad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow AX.1 Gamepad",
+        "vendor_id": "0e6f",
+        "product_id": "0113",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1 Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "011f",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PDP EA Sports Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0131",
+        "vendor": "Logic3",
+        "product": "PDP EA Sports Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0133",
+        "vendor": "Logic3",
+        "product": "Wired Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow Prismatic Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0139",
+        "vendor": "Logic3",
+        "product": "Afterglow Prismatic Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PDP Xbox One Controller",
+        "vendor_id": "0e6f",
+        "product_id": "013a",
+        "vendor": "Logic3",
+        "product": "PDP Xbox One Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0146",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PDP Marvel Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0147",
+        "vendor": "Logic3",
+        "product": "PDP Marvel Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PDP Arcade Stick for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "015c",
+        "vendor": "Logic3",
+        "product": "PDP Arcade Stick for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Camo Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0161",
+        "vendor": "Logic3",
+        "product": "Camo Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox One Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0162",
+        "vendor": "Logic3",
+        "product": "Xbox One Wired Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Legendary Collection Deliverer of Truth",
+        "vendor_id": "0e6f",
+        "product_id": "0163",
+        "vendor": "Logic3",
+        "product": "Legendary Collection Deliverer of Truth",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Battlefield 1 Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0164",
+        "vendor": "Logic3",
+        "product": "Battlefield 1 Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Titanfall 2 Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0165",
+        "vendor": "Logic3",
+        "product": "Titanfall 2 Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Pelican PL-3601",
+        "vendor_id": "0e6f",
+        "product_id": "0201",
+        "vendor": "Logic3",
+        "product": "Pelican PL-3601",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0213",
+        "vendor": "Logic3",
+        "product": "Afterglow Gamepad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "021f",
+        "vendor": "Logic3",
+        "product": "Rock Candy Gamepad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0246",
+        "vendor": "Logic3",
+        "product": "Rock Candy Gamepad for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0301",
+        "vendor": "Logic3",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Wired Controller for Xbox One",
+        "vendor_id": "0e6f",
+        "product_id": "0346",
+        "vendor": "Logic3",
+        "product": "Rock Candy Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0401",
+        "vendor": "Logic3",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow AX.1 Gamepad for Xbox 360",
+        "vendor_id": "0e6f",
+        "product_id": "0413",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1 Gamepad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Wired Controller",
+        "vendor_id": "0e6f",
+        "product_id": "0501",
+        "vendor": "Logic3",
+        "product": "Wired Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow AX.1",
+        "vendor_id": "0e6f",
+        "product_id": "f900",
+        "vendor": "Logic3",
+        "product": "Afterglow AX.1",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "SmartJoy Frag Xpad/PS2 adaptor",
+        "vendor_id": "0e8f",
+        "product_id": "0201",
+        "vendor": "GreenAsia Inc.",
+        "product": "SmartJoy Frag Xpad/PS2 adaptor",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Xbox Controller",
+        "vendor_id": "0e8f",
+        "product_id": "3008",
+        "vendor": "GreenAsia Inc.",
+        "product": "Xbox Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Dead or Alive 4 FightStick for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000a",
+        "vendor": "Hori Co., Ltd",
+        "product": "Dead or Alive 4 FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Horipad EX Turbo for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000c",
+        "vendor": "Hori Co., Ltd",
+        "product": "Horipad EX Turbo for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Fighting Stick EX2 for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "000d",
+        "vendor": "Hori Co., Ltd",
+        "product": "Fighting Stick EX2 for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro.EX for Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "0016",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro.EX for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Aracde Pro.VX",
+        "vendor_id": "0f0d",
+        "product_id": "001b",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Aracde Pro.VX",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro Hayabusa for Xbox One",
+        "vendor_id": "0f0d",
+        "product_id": "0063",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro Hayabusa for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Horipad One",
+        "vendor_id": "0f0d",
+        "product_id": "0067",
+        "vendor": "Hori Co., Ltd",
+        "product": "Horipad One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "vendor_id": "0f0d",
+        "product_id": "0078",
+        "vendor": "Hori Co., Ltd",
+        "product": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "HORIPAD for Nintendo Switch",
+        "vendor_id": "0f0d",
+        "product_id": "00c1",
+        "vendor": "Hori Co., Ltd",
+        "product": "HORIPAD for Nintendo Switch",
+        "mapper": "MapperHoripadSwitch",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Philips Recoil",
+        "vendor_id": "0f30",
+        "product_id": "010b",
+        "vendor": "Jess Technology Co., Ltd",
+        "product": "Philips Recoil",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Joytech Advanced Controller",
+        "vendor_id": "0f30",
+        "product_id": "0202",
+        "vendor": "Jess Technology Co., Ltd",
+        "product": "Joytech Advanced Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "BigBen XBMiniPad Controller",
+        "vendor_id": "0f30",
+        "product_id": "8888",
+        "vendor": "Jess Technology Co., Ltd",
+        "product": "BigBen XBMiniPad Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Joytech Wireless Advanced Controller",
+        "vendor_id": "102c",
+        "product_id": "ff0c",
+        "vendor": "Etoms Electronics Corp.",
+        "product": "Joytech Wireless Advanced Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "1038:1430",
+        "vendor_id": "1038",
+        "product_id": "1430",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "1038:1431",
+        "vendor_id": "1038",
+        "product_id": "1431",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "1038:1434",
+        "vendor_id": "1038",
+        "product_id": "1434",
+        "vendor": "SteelSeries ApS",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "GC-100XF",
+        "vendor_id": "11c9",
+        "product_id": "55f0",
+        "vendor": "Nacon",
+        "product": "GC-100XF",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Dance Pad for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0004",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Dance Pad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Afterglow Wired Controller for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0301",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Afterglow Wired Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Mortal Kombat Klassic FightStick for Xbox 360",
+        "vendor_id": "12ab",
+        "product_id": "0303",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Mortal Kombat Klassic FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Dance Dance Revolution Dance Pad",
+        "vendor_id": "12ab",
+        "product_id": "8809",
+        "vendor": "Honey Bee Electronic International Ltd.",
+        "product": "Dance Dance Revolution Dance Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Guitar Hero X-plorer",
+        "vendor_id": "1430",
+        "product_id": "4748",
+        "vendor": "RedOctane",
+        "product": "Guitar Hero X-plorer",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "TX6500+ Dance Pad",
+        "vendor_id": "1430",
+        "product_id": "8888",
+        "vendor": "RedOctane",
+        "product": "TX6500+ Dance Pad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1430",
+        "product_id": "f801",
+        "vendor": "RedOctane",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller for Xbox 360",
+        "vendor_id": "146b",
+        "product_id": "0601",
+        "vendor": "BigBen Interactive",
+        "product": "Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "DeathAdder 2013",
+        "vendor_id": "1532",
+        "product_id": "0037",
+        "vendor": "Razer USA, Ltd",
+        "product": "DeathAdder 2013",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Razer Serval Controller",
+        "vendor_id": "1532",
+        "product_id": "0900",
+        "vendor": "Razer USA, Ltd",
+        "product": "",
+        "mapper": "MapperRazerServal",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Atrox Arcade Stick for Xbox One",
+        "vendor_id": "1532",
+        "product_id": "0a00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Atrox Arcade Stick for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Wildcat",
+        "vendor_id": "1532",
+        "product_id": "0a03",
+        "vendor": "Razer USA, Ltd",
+        "product": "Wildcat",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Power A Mini Pro Elite",
+        "vendor_id": "15e4",
+        "product_id": "3f00",
+        "vendor": "Numark",
+        "product": "Power A Mini Pro Elite",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Airflo Wired Controller for Xbox 360",
+        "vendor_id": "15e4",
+        "product_id": "3f0a",
+        "vendor": "Numark",
+        "product": "Airflo Wired Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Batarang controller for Xbox 360",
+        "vendor_id": "15e4",
+        "product_id": "3f10",
+        "vendor": "Numark",
+        "product": "Batarang controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "162e:beef",
+        "vendor_id": "162e",
+        "product_id": "beef",
+        "vendor": "Razer USA, Ltd",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Onza Tournament Edition controller",
+        "vendor_id": "1689",
+        "product_id": "fd00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Onza Tournament Edition controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Onza Classic Edition",
+        "vendor_id": "1689",
+        "product_id": "fd01",
+        "vendor": "Razer USA, Ltd",
+        "product": "Onza Classic Edition",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Sabertooth Elite",
+        "vendor_id": "1689",
+        "product_id": "fe00",
+        "vendor": "Razer USA, Ltd",
+        "product": "Sabertooth Elite",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "ADT-1 Controller",
+        "vendor_id": "18d1",
+        "product_id": "2c40",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperADT1",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller",
+        "vendor_id": "18d1",
+        "product_id": "9400",
+        "vendor": "Google Inc.",
+        "product": "",
+        "mapper": "MapperStadiaController",
+        "source": "mapping-table"
+      },
+      {
+        "name": "1949:041a",
+        "vendor_id": "1949",
+        "product_id": "041a",
+        "vendor": "Lab126, Inc.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Band Guitar for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0002",
+        "vendor": "Harmonix Music",
+        "product": "Rock Band Guitar for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Band Drum Kit for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0003",
+        "vendor": "Harmonix Music",
+        "product": "Rock Band Drum Kit for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Ion Drum Rocker for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "0130",
+        "vendor": "Harmonix Music",
+        "product": "Ion Drum Rocker for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1bad",
+        "product_id": "f016",
+        "vendor": "Harmonix Music",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV SE FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f018",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV SE FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "BrawlStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f019",
+        "vendor": "Harmonix Music",
+        "product": "BrawlStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Ghost Recon Future Soldier Gamepad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f021",
+        "vendor": "Harmonix Music",
+        "product": "Ghost Recon Future Soldier Gamepad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MLG Pro Circuit Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f023",
+        "vendor": "Harmonix Music",
+        "product": "MLG Pro Circuit Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Call of Duty Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f025",
+        "vendor": "Harmonix Music",
+        "product": "Call of Duty Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "FPS Pro Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f027",
+        "vendor": "Harmonix Music",
+        "product": "FPS Pro Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV FightPad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f028",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV FightPad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "FightPad",
+        "vendor_id": "1bad",
+        "product_id": "f02e",
+        "vendor": "Harmonix Music",
+        "product": "FightPad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MC2 MicroCON Racing Wheel for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f030",
+        "vendor": "Harmonix Music",
+        "product": "MC2 MicroCON Racing Wheel for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MicroCON Gamepad Pro for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f036",
+        "vendor": "Harmonix Music",
+        "product": "MicroCON Gamepad Pro for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV FightStick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f038",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV FightStick TE for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Marvel VS Capcom 2 Tournament Stick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f039",
+        "vendor": "Harmonix Music",
+        "product": "Marvel VS Capcom 2 Tournament Stick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter X Tekken FightStick Pro for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03a",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter X Tekken FightStick Pro for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Street Fighter IV Arcade Stick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03d",
+        "vendor": "Harmonix Music",
+        "product": "Street Fighter IV Arcade Stick TE for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "MLG Arcade FightStick TE for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03e",
+        "vendor": "Harmonix Music",
+        "product": "MLG Arcade FightStick TE for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Soulcalibur FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f03f",
+        "vendor": "Harmonix Music",
+        "product": "Soulcalibur FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Arcade FightStick TE S+ for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f042",
+        "vendor": "Harmonix Music",
+        "product": "Arcade FightStick TE S+ for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "FightStick TE2 for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f080",
+        "vendor": "Harmonix Music",
+        "product": "FightStick TE2 for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Horipad EX2 Turbo for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f501",
+        "vendor": "Harmonix Music",
+        "product": "Horipad EX2 Turbo for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro.VX SA for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f502",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.VX SA for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Fighting Stick VX for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f503",
+        "vendor": "Harmonix Music",
+        "product": "Fighting Stick VX for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro.EX",
+        "vendor_id": "1bad",
+        "product_id": "f504",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.EX",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Fighting Stick EX2B for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f505",
+        "vendor": "Harmonix Music",
+        "product": "Fighting Stick EX2B for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro.EX Premium VLX for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f506",
+        "vendor": "Harmonix Music",
+        "product": "Real Arcade Pro.EX Premium VLX for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Controller",
+        "vendor_id": "1bad",
+        "product_id": "f900",
+        "vendor": "Harmonix Music",
+        "product": "Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "GameStop Controller",
+        "vendor_id": "1bad",
+        "product_id": "f901",
+        "vendor": "Harmonix Music",
+        "product": "GameStop Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Tron Controller for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f903",
+        "vendor": "Harmonix Music",
+        "product": "Tron Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PDP Versus Fighting Pad for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f904",
+        "vendor": "Harmonix Music",
+        "product": "PDP Versus Fighting Pad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Mortal Kombat FightStick for Xbox 360",
+        "vendor_id": "1bad",
+        "product_id": "f906",
+        "vendor": "Harmonix Music",
+        "product": "Mortal Kombat FightStick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Gamepad",
+        "vendor_id": "1bad",
+        "product_id": "fa01",
+        "vendor": "Harmonix Music",
+        "product": "Gamepad",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Razer Onza Tournament Edition",
+        "vendor_id": "1bad",
+        "product_id": "fd00",
+        "vendor": "Harmonix Music",
+        "product": "Razer Onza Tournament Edition",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Razer Onza Classic Edition",
+        "vendor_id": "1bad",
+        "product_id": "fd01",
+        "vendor": "Harmonix Music",
+        "product": "Razer Onza Classic Edition",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Moga Pro Controller (HID mode)",
+        "vendor_id": "20d6",
+        "product_id": "6271",
+        "vendor": "DAP Technologies",
+        "product": "",
+        "mapper": "MapperMogaPro",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Bluetooth)",
+        "vendor_id": "2378",
+        "product_id": "1008",
+        "vendor": "OnLive",
+        "product": "",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "OnLive Controller (Wired)",
+        "vendor_id": "2378",
+        "product_id": "100a",
+        "vendor": "OnLive",
+        "product": "Universal Wireless Controller",
+        "mapper": "MapperOnLiveWireless",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Razer Atrox Gaming Arcade Stick",
+        "vendor_id": "24c6",
+        "product_id": "5000",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Razer Atrox Gaming Arcade Stick",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PowerA Mini ProEX Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5300",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA Mini ProEX Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Airflo Wired Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5303",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Airflo Wired Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "ProEX Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "530a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "ProEX Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Pro Ex mini for XBOX",
+        "vendor_id": "24c6",
+        "product_id": "531a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Pro Ex mini for XBOX",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "FUS1ON Tournament Controller",
+        "vendor_id": "24c6",
+        "product_id": "5397",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "FUS1ON Tournament Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PowerA CPFA115320-01 [Mini Controller for Xbox One]",
+        "vendor_id": "24c6",
+        "product_id": "541a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA CPFA115320-01 [Mini Controller for Xbox One]",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Spectra for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "542a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Spectra for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "PowerA Wired Controller for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "543a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "PowerA Wired Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Horipad EX2 Turbo",
+        "vendor_id": "24c6",
+        "product_id": "5500",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Horipad EX2 Turbo",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Hori Real Arcade Pro.VX-SA for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5501",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Real Arcade Pro.VX-SA for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Hori Fighting Stick VX Alt for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5502",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Fighting Stick VX Alt for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Hori Fighting Edge for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5503",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Fighting Edge for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Hori Soulcalibur V Stick for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "5506",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Soulcalibur V Stick for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Hori Gem Controller for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "550d",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Hori Gem Controller for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "550e",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Real Arcade Pro V Kai for Xbox One / Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Fusion Pro Controller",
+        "vendor_id": "24c6",
+        "product_id": "551a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Fusion Pro Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Fusion Controller for Xbox One",
+        "vendor_id": "24c6",
+        "product_id": "561a",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Fusion Controller for Xbox One",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Ferrari 458 Italia Racing Wheel",
+        "vendor_id": "24c6",
+        "product_id": "5b00",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Ferrari 458 Italia Racing Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "GPX Controller",
+        "vendor_id": "24c6",
+        "product_id": "5b02",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "GPX Controller",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "24c6:5b03",
+        "vendor_id": "24c6",
+        "product_id": "5b03",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Sabertooth Elite",
+        "vendor_id": "24c6",
+        "product_id": "5d04",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Sabertooth Elite",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "Rock Candy Gamepad for Xbox 360",
+        "vendor_id": "24c6",
+        "product_id": "fafe",
+        "vendor": "ThrustMaster, Inc.",
+        "product": "Rock Candy Gamepad for Xbox 360",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "OUYA Controller",
+        "vendor_id": "2836",
+        "product_id": "0001",
+        "vendor": "OUYA",
+        "product": "",
+        "mapper": "MapperOUYA",
+        "source": "mapping-table"
+      },
+      {
+        "name": "28de:11ff",
+        "vendor_id": "28de",
+        "product_id": "11ff",
+        "vendor": "Valve Software",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "DJI FPV Remote Controller 2",
+        "vendor_id": "2ca3",
+        "product_id": "1020",
+        "vendor": "DJI Technology Co., Ltd.",
+        "product": "",
+        "mapper": "MapperDjiFpv",
+        "source": "mapping-table"
+      },
+      {
+        "name": "2dc8:3106",
+        "vendor_id": "2dc8",
+        "product_id": "3106",
+        "vendor": "8BitDo",
+        "product": "",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "SCUF Vantage, SCUF Vantage 2",
+        "vendor_id": "2e95",
+        "product_id": "7725",
+        "vendor": "SCUF Gaming",
+        "product": "Controller",
+        "mapper": "MapperDualshock4",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Speedster 3 Forceshock Wheel",
+        "vendor_id": "3767",
+        "product_id": "0101",
+        "vendor": "Fanatec",
+        "product": "Speedster 3 Forceshock Wheel",
+        "mapper": "XInput",
+        "source": "xinput-id-list"
+      },
+      {
+        "name": "boom PSX+N64 USB Converter",
+        "vendor_id": "6666",
+        "product_id": "0667",
+        "vendor": "Prototype product Vendor ID",
+        "product": "WiseGroup Smart Joy PSX, PS-PC Smart JoyPad",
+        "mapper": "MapperBoomN64Psx",
+        "source": "mapping-table"
+      },
+      {
+        "name": "Stadia Controller prototype",
+        "vendor_id": "6666",
+        "product_id": "9401",
+        "vendor": "Prototype product Vendor ID",
+        "product": "",
+        "mapper": "MapperStadiaControllerOldFirmware",
+        "source": "mapping-table"
+      }
+    ]
+  }
+}

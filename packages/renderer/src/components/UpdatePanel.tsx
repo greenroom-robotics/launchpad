@@ -1,4 +1,5 @@
-import { Box, Text, Button, Anchor, CheckBox } from 'grommet';
+import { Box, Text, Button, Anchor, CheckBox, Tip } from 'grommet';
+import { CircleInformation } from 'grommet-icons';
 import type { UpdateState } from '@app/shared';
 import { Loading } from './Loading';
 import { useAppUpdates } from '../hooks/useAppUpdates';
@@ -6,6 +7,29 @@ import { trpc } from '../trpc-react';
 
 const RELEASES_URL = 'https://github.com/greenroom-robotics/launchpad/releases';
 const releaseUrl = (version: string) => `${RELEASES_URL}/tag/v${version}`;
+
+interface SystemInfo {
+  chromeVersion: string;
+  electronVersion: string;
+  platform: string;
+  arch: string;
+}
+
+const AboutInfo = ({ info }: { info: SystemInfo }) => (
+  <Tip
+    content={
+      <Box gap="xsmall">
+        <Text size="small">Chromium: {info.chromeVersion}</Text>
+        <Text size="small">Electron: {info.electronVersion}</Text>
+        <Text size="small">
+          Platform: {info.platform} ({info.arch})
+        </Text>
+      </Box>
+    }
+  >
+    <Button plain a11yTitle="About this build" icon={<CircleInformation size="medium" />} />
+  </Tip>
+);
 
 export const UpdatePanel = () => {
   const {
@@ -30,7 +54,13 @@ export const UpdatePanel = () => {
   // The version is known locally and must never depend on network state.
   return (
     <Box gap="small" align="start">
-      <Text size="small">Current version: {state.currentVersion}</Text>
+      <Box direction="row" align="center" gap="xsmall">
+        <Text size="small">
+          Current version: {state.currentVersion}
+          {systemInfo && !systemInfo.isPackaged ? ' (dev)' : ''}
+        </Text>
+        {systemInfo && <AboutInfo info={systemInfo} />}
+      </Box>
       {showLastChecked(state) && (
         <Text size="small" color="text-weak">
           Last checked {formatLastChecked(state.lastCheckedAt)}

@@ -1,3 +1,4 @@
+import { app } from 'electron';
 import { z } from 'zod';
 import { router, publicProcedure, injectService } from '../../trpc/procedures.js';
 import { TrayService } from './tray.service.js';
@@ -124,6 +125,7 @@ export const systemRouter = router({
       nodeVersion: process.version,
       electronVersion: process.versions.electron,
       chromeVersion: process.versions.chrome,
+      isPackaged: app.isPackaged,
       pid: process.pid,
       uptime: process.uptime(),
     };

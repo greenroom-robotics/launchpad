@@ -36,6 +36,8 @@ jobs:
           node-version: '24'
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
       - run: npm run lint
+      - name: Check gamepad data matches the pinned Chromium
+        run: npm run check:gamepads
 
   typecheck:
     runs-on: ubuntu-latest

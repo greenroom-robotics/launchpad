@@ -1,4 +1,6 @@
 .github/actions/**/*.js linguist-detectable=false
 scripts/*.js linguist-detectable=false
 *.config.js linguist-detectable=false
+packages/renderer/src/data/gamepads.json linguist-generated=true
+docs/gamepads.md linguist-generated=true
 * text=auto eol=lf

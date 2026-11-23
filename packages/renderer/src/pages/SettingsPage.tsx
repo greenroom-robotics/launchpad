@@ -6,6 +6,7 @@ import { Header } from '../components/layout/Header';
 import { AppSettingsPage } from './AppSettingsPage';
 import { AuthSettingsPage } from './AuthSettingsPage';
 import { GeneralSettingsPage } from './GeneralSettingsPage';
+import { ControllersSettingsPage } from './ControllersSettingsPage';
 
 export const SettingsPage = memo(() => {
   const location = useLocation();
@@ -23,6 +24,7 @@ export const SettingsPage = memo(() => {
               items: [
                 { id: '/settings/apps', label: 'Applications' },
                 { id: '/settings/auth', label: 'Authentication' },
+                { id: '/settings/controllers', label: 'Controllers' },
                 { id: '/settings/general', label: 'System' },
               ],
             },
@@ -45,6 +47,7 @@ export const SettingsPage = memo(() => {
               <Route path="/" element={<Navigate to="apps" replace />} />
               <Route path="apps" element={<AppSettingsPage />} />
               <Route path="auth" element={<AuthSettingsPage />} />
+              <Route path="controllers" element={<ControllersSettingsPage />} />
               <Route path="general" element={<GeneralSettingsPage />} />
             </Routes>
           </Box>

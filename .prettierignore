@@ -4,3 +4,5 @@ coverage
 .git
 .vscode
 *.log
+docs/gamepads.md
+.mypy_cache

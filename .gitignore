@@ -55,3 +55,7 @@ thumbs.db
 .idea/httpRequests
 /.idea/csv-plugin.xml
 test-results
+
+# Python
+__pycache__/
+*.pyc

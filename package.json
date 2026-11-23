@@ -2,7 +2,7 @@
   "name": "greenroom-launchpad",
   "productName": "Greenroom Launchpad",
   "description": "Unified launcher for Greenroom Robotics desktop applications",
-  "version": "0.0.8",
+  "version": "0.0.0",
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
@@ -25,6 +25,8 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present && prettier --check .",
     "format": "npm run format --workspaces --if-present",
+    "generate:gamepads": "python3 scripts/gamepad_compatability.py",
+    "check:gamepads": "python3 scripts/gamepad_compatability.py --check",
     "generate-icons": "inkscape buildResources/icon.svg --export-type=png --export-filename=buildResources/icon-1024.png --export-width=1024 --export-height=1024 --export-background-opacity=0 && npx electron-icon-builder --input=buildResources/icon-1024.png --output=buildResources --flatten && mv buildResources/icons/* buildResources/ && rmdir buildResources/icons"
   },
   "devDependencies": {

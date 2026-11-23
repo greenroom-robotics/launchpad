@@ -15,7 +15,7 @@ The project uses a tag-based release flow with semantic versioning. Pushing a `v
 3. The Release workflow validates the tag, builds for Windows/macOS/Linux, runs tests, and creates a **draft** GitHub release with auto-generated notes.
 4. Review the draft on the [Releases page](../../releases), edit notes if needed, then publish.
 
-Bumping `package.json` to match the tag before pushing is optional — the workflow injects the tag's version into the build. Bumping just keeps local dev builds showing the right version.
+There is no need to bump `package.json` — the workflow injects the tag's version into the build. `package.json` stays at `0.0.0` as a placeholder, and local dev runs show it with a `(dev)` suffix.
 
 ## Manual Trigger
 
