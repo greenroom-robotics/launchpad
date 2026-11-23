@@ -37,7 +37,9 @@ jobs:
           api-token-github: ${{ secrets.SOFTWARE_TEAM_READ_PACKAGES_API_TOKEN_GITHUB }}
       - run: npm run lint
       - name: Check gamepad data matches the pinned Chromium
-        run: npm run check:gamepads
+        run: |
+          node node_modules/electron/install.js
+          npm run check:gamepads
 
   typecheck:
     runs-on: ubuntu-latest
