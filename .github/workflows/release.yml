@@ -128,12 +128,16 @@ jobs:
           **Full Changelog**: https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${{ needs.validate-tag.outputs.tag }}
           EOF
 
+      - name: Generate checksums
+        working-directory: dist
+        run: sha256sum *.exe *.dmg *.deb > SHA256SUMS
+
       - name: Create GitHub Release
         # macOS auto-update downloads the .zip (referenced by latest-mac.yml), not the .dmg.
         # .blockmap files enable delta updates and must be uploaded alongside the installers.
         run: |
           gh release create ${{ needs.validate-tag.outputs.tag }} \
-            dist/*.exe dist/*.dmg dist/*.zip dist/*.deb dist/*.blockmap dist/latest*.yml \
+            dist/*.exe dist/*.dmg dist/*.zip dist/*.deb dist/*.blockmap dist/latest*.yml dist/SHA256SUMS \
             --repo ${{ github.repository }} \
             --title "Release ${{ needs.validate-tag.outputs.tag }}" \
             --notes-file release-notes.md \
